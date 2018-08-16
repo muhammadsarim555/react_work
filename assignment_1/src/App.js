@@ -5,12 +5,19 @@ import './App.css';
 class App extends Component {
   render() {
     const name = "Hello World";
+    const obj = {name: "Hello World Object"}
     return (
       <div className="App">
         <ul> 
-          {/* return */}
           <li> {name} </li>
            </ul>
+
+        <ul> 
+          <li>
+            {obj.name}
+            </li>
+        </ul>
+
       </div>
     );
   }
