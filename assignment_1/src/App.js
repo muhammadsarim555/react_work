@@ -908,19 +908,8 @@ class App extends Component {
                         </ul>
                     })
                     }
-                         
+                    
 
-                        {/* {
-                         userPost.map(post =>{
-                           console.log(post.userId , post.body)
-                        }
-                        <br/>
-                         <ol>
-                            <li>{}</li>
-                            </ol>
-                
-              })
-              } */}
 
 
 
