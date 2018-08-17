@@ -8,7 +8,8 @@ class App extends Component {
     const obj = {name: "Hello World Object"};
     const data = ['We', 'are', 'United'] //Show these in seperate tags
     const list = [{name: "Hello World 1"}, {name: "Hello World 2"}, {name: "Hello World 3"}] //Show these in seperate tags
-    const complex = [{company: 'XYZ', jobs: ['Javascript' , 'React']}, {company: 'ABC', jobs: ['AngularJs' , 'Ionic']}]
+    const complex = [{company: 'XYZ', jobs: ['Javascript' , 'React']}, 
+    {company: 'ABC', jobs: ['AngularJs' , 'Ionic']}]
     
     
 
@@ -42,10 +43,38 @@ class App extends Component {
                    return  <li>{li.name}</li>
                   })
                 } 
-                
+                </ul> 
                 <hr/>
-              
-              </ul> 
+
+                {/* <ul>
+                    
+                      {
+                      complex.map((data)=>{
+                        // console.log("Company" , data.company)
+                        const a = data.company;
+                        let jobs = data.jobs; 
+                        // return <li>Company <s`trong>{a} </strong> </li>
+
+                         jobs.map((dataV)=>{
+                          console.log("company  " , a , "Jobs" , dataV);
+                          // return
+                           <li>Company {a} Job Title {dataV}  </li>
+                        })
+                      })
+                    }
+                    
+                  </ul> */}
+{
+                  complex.map(c =>{
+                    return <ul>
+                      <li>{c.company }
+                    {   c.jobs.map( job => {
+           return <span>{job}</span>
+         }) }
+                        </li>
+                    </ul>
+                  })
+}
 
       </div>
     );
