@@ -11,7 +11,7 @@ class App extends Component {
     const complex = [{company: 'XYZ', jobs: ['Javascript' , 'React']}, 
     {company: 'ABC', jobs: ['AngularJs' , 'Ionic']}]
     
-    
+    console.log(complex );
 
     return (
       <div className="App">
@@ -46,30 +46,13 @@ class App extends Component {
                 </ul> 
                 <hr/>
 
-                {/* <ul>
-                    
-                      {
-                      complex.map((data)=>{
-                        // console.log("Company" , data.company)
-                        const a = data.company;
-                        let jobs = data.jobs; 
-                        // return <li>Company <s`trong>{a} </strong> </li>
-
-                         jobs.map((dataV)=>{
-                          console.log("company  " , a , "Jobs" , dataV);
-                          // return
-                           <li>Company {a} Job Title {dataV}  </li>
-                        })
-                      })
-                    }
-                    
-                  </ul> */}
+                
 {
                   complex.map(c =>{
                     return <ul>
-                      <li>{c.company }
+                      <li> Company <strong> {  c.company }</strong>
                     {   c.jobs.map( job => {
-           return <span>{job}</span>
+           return  <span> Job Title <strong> {  job }</strong></span>
          }) }
                         </li>
                     </ul>
