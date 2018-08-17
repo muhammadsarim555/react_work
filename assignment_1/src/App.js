@@ -35,12 +35,17 @@ class App extends Component {
             <hr/>
             
             <ul>
-            {
-                list.map((value , index)=>{
-                  console.log(value)
-                })
-              }
-              </ul>
+
+                {
+                  list.map(function(li){
+                    // console.log(li.name);
+                   return  <li>{li.name}</li>
+                  })
+                } 
+                
+                <hr/>
+              
+              </ul> 
 
       </div>
     );
