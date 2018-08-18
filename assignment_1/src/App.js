@@ -856,8 +856,8 @@ class App extends Component {
 <div className="row">
 <div className="column">
   <div className="card">
-    <h3>Card 1</h3>
-    <p>Some text</p>
+    <h3>Question No 1</h3>
+    <p>{name}</p>
     <p>Some text</p>
   </div>
 </div>
