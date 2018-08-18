@@ -872,13 +872,13 @@ class App extends Component {
 <div className="column">
   <div className="card">
   <h5> Part 3 </h5>
-     <ul>
+     <ol>
 
 {data.map((v ,i)=>{
   // console.log(v);
   return <li>{v}</li>
 })}
-</ul>
+</ol>
   </div>
 </div>
 
@@ -886,7 +886,7 @@ class App extends Component {
   <div className="card">
     <h5>Part 4</h5>
     <ul>
-      {
+    {
                   list.map(function(li){
                     // console.log(li.name);
                    return  <li>{li.name}</li>
@@ -894,28 +894,41 @@ class App extends Component {
                 } 
                 </ul>
   </div>
-
-  <div className="column">
-    <div className="card">
-      <h5>Card 1</h5>
-      {/* <p> */}
-      {
-                  complex.map(c =>{
-                    return <ul>
-                      <li> Company <strong> {  c.company }</strong>
-                    {   c.jobs.map( job => {
-           return  <span> Job Title <strong> {  job }</strong></span>
-         }) }
-                        </li>
-                    </ul>
-                  })
-                }
-{/* </p> */}
-      <p>Some text</p>
-    {/* </div> */}
-  </div>
-  
 </div>
+
+<div className="column">
+  <div className="card">
+    <h5>Part 5</h5>
+    <ul>
+    {
+                  list.map(function(li){
+                    // console.log(li.name);
+                   return  <li>{li.name}</li>
+                  })
+                } 
+                </ul>
+  </div>
+</div>
+
+<div className="column">
+  <div className="card">
+    <h5>Part 6</h5>
+    {
+      complex.map(c =>{
+        return <ul>
+          <li> Company <strong> {  c.company }</strong>
+        {   c.jobs.map( job => {
+return  <span> Job Title <strong> {  job }</strong></span>
+}) }
+            </li>
+        </ul>
+      })
+    }
+  </div>
+</div>
+
+
+
 </div>
 
 
@@ -960,7 +973,18 @@ class App extends Component {
                 <hr/> */}
 
                 
-{/* <hr/> */}
+// {
+//                   complex.map(c =>{
+//                     return <ul>
+//                       <li> Company <strong> {  c.company }</strong>
+//                     {   c.jobs.map( job => {
+//            return  <span> Job Title <strong> {  job }</strong></span>
+//          }) }
+//                         </li>
+//                     </ul>
+//                   })
+//                 }
+// <hr/>
 {
                 userName.map(name =>{
                   console.log(name.name , name.id);
