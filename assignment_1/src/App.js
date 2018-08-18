@@ -872,22 +872,49 @@ class App extends Component {
 <div className="column">
   <div className="card">
   <h5> Part 3 </h5>
-     <ol>
+     <ul>
 
 {data.map((v ,i)=>{
   // console.log(v);
   return <li>{v}</li>
 })}
-</ol>
+</ul>
   </div>
 </div>
 
 <div className="column">
   <div className="card">
-    <h3>Card 4</h3>
-    <p>Some text</p>
-    <p>Some text</p>
+    <h5>Part 4</h5>
+    <ul>
+      {
+                  list.map(function(li){
+                    // console.log(li.name);
+                   return  <li>{li.name}</li>
+                  })
+                } 
+                </ul>
   </div>
+
+  <div className="column">
+    <div className="card">
+      <h5>Card 1</h5>
+      {/* <p> */}
+      {
+                  complex.map(c =>{
+                    return <ul>
+                      <li> Company <strong> {  c.company }</strong>
+                    {   c.jobs.map( job => {
+           return  <span> Job Title <strong> {  job }</strong></span>
+         }) }
+                        </li>
+                    </ul>
+                  })
+                }
+{/* </p> */}
+      <p>Some text</p>
+    {/* </div> */}
+  </div>
+  
 </div>
 </div>
 
@@ -921,7 +948,7 @@ class App extends Component {
           </ol>
             <hr/> */}
             
-            <ul>
+            {/* <ul>
 
                 {
                   list.map(function(li){
@@ -930,21 +957,10 @@ class App extends Component {
                   })
                 } 
                 </ul> 
-                <hr/>
+                <hr/> */}
 
                 
-{
-                  complex.map(c =>{
-                    return <ul>
-                      <li> Company <strong> {  c.company }</strong>
-                    {   c.jobs.map( job => {
-           return  <span> Job Title <strong> {  job }</strong></span>
-         }) }
-                        </li>
-                    </ul>
-                  })
-                }
-<hr/>
+{/* <hr/> */}
 {
                 userName.map(name =>{
                   console.log(name.name , name.id);
