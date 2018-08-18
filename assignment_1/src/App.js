@@ -856,27 +856,29 @@ class App extends Component {
 <div className="row">
 <div className="column">
   <div className="card">
-    <h3>Question No 1</h3>
+    <h5> Question No 1</h5>
     <p>{name}</p>
-    <p><button type="button" className="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
-  Launch demo modal
-</button></p>
+
   </div>
 </div>
 
 <div className="column">
   <div className="card">
-    <h3>Card 2</h3>
-    <p>Some text</p>
-    <p>Some text</p>
+  <h5> Part 2 </h5>
+  <p> {obj.name}</p>
   </div>
 </div>
 
 <div className="column">
   <div className="card">
-    <h3>Card 3</h3>
-    <p>Some text</p>
-    <p>Some text</p>
+  <h5> Part 3 </h5>
+     <ol>
+
+{data.map((v ,i)=>{
+  // console.log(v);
+  return <li>{v}</li>
+})}
+</ol>
   </div>
 </div>
 
@@ -890,55 +892,34 @@ class App extends Component {
 </div>
 
 
-{/* modal */}
-
-
-
-<div className="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div className="modal-dialog" role="document">
-    <div className="modal-content">
-      <div className="modal-header">
-        <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div className="modal-body">
-        ...
-      </div>
-      <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
 
 
-        <ul> 
+
+
+        {/* <ul> 
           <li> {name} </li>
            </ul>
            
            
-            <hr/>
-
+            <hr/> */}
+{/* 
         <ul> 
           <li>
             {obj.name}
             </li>
         </ul>
-        <hr/>
-        <ol>
+        <hr/> */}
+        {/* <ol>
 
             {data.map((v ,i)=>{
               // console.log(v);
               return <li>{v}</li>
             })}
           </ol>
-            <hr/>
+            <hr/> */}
             
             <ul>
 
