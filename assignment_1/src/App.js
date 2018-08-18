@@ -858,7 +858,9 @@ class App extends Component {
   <div className="card">
     <h3>Question No 1</h3>
     <p>{name}</p>
-    <p>Some text</p>
+    <p><button type="button" className="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
+  Launch demo modal
+</button></p>
   </div>
 </div>
 
@@ -890,9 +892,7 @@ class App extends Component {
 
 {/* modal */}
 
-<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
-  Launch demo modal
-</button>
+
 
 <div className="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog" role="document">
