@@ -851,9 +851,48 @@ class App extends Component {
     // console.log(userPost);
     return (
       <div className="App">
+       
+   
+<div className="row">
+<div className="column">
+  <div className="card">
+    <h3>Card 1</h3>
+    <p>Some text</p>
+    <p>Some text</p>
+  </div>
+</div>
+
+<div className="column">
+  <div className="card">
+    <h3>Card 2</h3>
+    <p>Some text</p>
+    <p>Some text</p>
+  </div>
+</div>
+
+<div className="column">
+  <div className="card">
+    <h3>Card 3</h3>
+    <p>Some text</p>
+    <p>Some text</p>
+  </div>
+</div>
+
+<div className="column">
+  <div class="card">
+    <h3>Card 4</h3>
+    <p>Some text</p>
+    <p>Some text</p>
+  </div>
+</div>
+</div>
+
+
         <ul> 
           <li> {name} </li>
            </ul>
+           
+           
             <hr/>
 
         <ul> 
@@ -899,6 +938,7 @@ class App extends Component {
                 userName.map(name =>{
                   console.log(name.name , name.id);
                     return <ul>
+                      <b> UserName       ID</b>
                       <li> 
                         
                          {name.name} {name.id} 
@@ -910,6 +950,7 @@ class App extends Component {
                     }
                     
 
+                    
 
 
 
