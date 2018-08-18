@@ -851,6 +851,10 @@ class App extends Component {
     // console.log(userPost);
     return (
       <div className="App">
+      <div id="navbar">
+        <h4 className="content">  React Assignment 1 </h4> 
+        <span id="post">Posted By Muhammad Sarim </span>
+         </div>
        
    
 <div className="row">
