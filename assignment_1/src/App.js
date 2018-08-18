@@ -928,6 +928,28 @@ return  <span> Job Title <strong> {  job }</strong></span>
 </div>
 
 
+<div className="column">
+  <div className="card">
+    <h5>Question No 2</h5>
+    {
+                userName.map(name =>{
+                  console.log(name.name , name.id);
+                    return <ul>
+                      <b> UserName       ID</b>
+                      <li> 
+                        
+                         {name.name} {name.id} 
+                        
+                        </li>
+                        <br/>
+                        </ul>
+                    })
+                    }
+                    
+
+  </div>
+</div>
+
 
 </div>
 
@@ -984,27 +1006,28 @@ return  <span> Job Title <strong> {  job }</strong></span>
 //                     </ul>
 //                   })
 //                 }
-// <hr/>
-{
-                userName.map(name =>{
-                  console.log(name.name , name.id);
-                    return <ul>
-                      <b> UserName       ID</b>
-                      <li> 
+ <hr/>
+ 
+//  {
+//                 userName.map(name =>{
+//                   console.log(name.name , name.id);
+//                     return <ul>
+//                       <b> UserName       ID</b>
+//                       <li> 
                         
-                         {name.name} {name.id} 
+//                          {name.name} {name.id} 
                         
-                        </li>
-                        <br/>
-                        </ul>
-                    })
-                    }
+//                         </li>
+//                         <br/>
+//                         </ul>
+//                     })
+//                     }
                     
 
                     
 
 
-
+              }
 
 
 

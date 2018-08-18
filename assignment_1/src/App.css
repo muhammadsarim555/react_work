@@ -6,6 +6,28 @@
   box-sizing: border-box;
 }
 
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  margin-top: 10%;
+  height: 300px;
+  overflow: scroll;
+  overflow-x: hidder;
+  overflow-x: hidden;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -14,6 +36,7 @@ body {
 .column {
   float: left;
   width: 25%;
+  height: 30%;
   padding: 0 10px;
 }
 
