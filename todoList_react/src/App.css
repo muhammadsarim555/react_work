@@ -4,4 +4,11 @@
   height: 40px;
   /* text-align: center; */
   margin-top: 30%;
+  display: inline;
+}
+
+#addbtn{
+  height: 40px;
+  line-height: 2px;  
+
 }
