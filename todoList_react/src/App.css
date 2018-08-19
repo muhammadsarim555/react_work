@@ -1,3 +1,6 @@
+.content{
+  font-family: -webkit-body;
+}
 
 #title{
   width:80%;
@@ -11,4 +14,9 @@
   height: 40px;
   line-height: 2px;  
 
+}
+
+#header{
+  background-color: rgba(0, 0, 255, 0.541);
+  width: 100%;
 }

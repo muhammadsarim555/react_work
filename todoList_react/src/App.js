@@ -4,13 +4,21 @@ import './App.css';
 
 class App extends Component {
   
+  renderHeader(){
+    return(
+      <div id="header"> 
+          To Do List With React 
+      </div>
+    );
+  }
 
   renderTitle(){
+
     return (
     <div className="App">
          <div className="form-group">
         <input type="text" className="form-control" id="title" placeholder="Title"/>
-        <button id="addbtn" type="button" class="btn btn-elegant">Add </button>
+        <button id="addbtn" type="button" className="btn btn-elegant">Add </button>
     </div>
 
   </div>
@@ -19,8 +27,11 @@ class App extends Component {
   render() {
     
     return (
-      console.log(this),
-     this.renderTitle()
+      // console.log(this),
+<div className="content" >
+      {this.renderHeader()} 
+     {this.renderTitle()}
+      </div>
     );
   }
 }
