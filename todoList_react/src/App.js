@@ -29,7 +29,8 @@ changeUserInput(e){
     }, ( ) => console.log(e));
   }
 addToList(e){
-  this.state.list; 
+  let listArray = this.state.list; 
+  listArray.push(e)
 }
   renderTitle(){
 
