@@ -26,7 +26,7 @@ class App extends Component {
   changeUserInput(input){
     this.setState({
       userInput: input,
-    })
+    }, ( ) => console.log(input));
   }
   renderTitle(){
 
