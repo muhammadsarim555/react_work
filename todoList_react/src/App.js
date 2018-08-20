@@ -23,11 +23,14 @@ class App extends Component {
 
   // }
 
-  changeUserInput(e){
+changeUserInput(e){
     this.setState({
       userInput: e,
     }, ( ) => console.log(e));
   }
+addToList(e){
+  this.state.list; 
+}
   renderTitle(){
 
     return (
@@ -35,7 +38,7 @@ class App extends Component {
          <h4 className="h4"> To Do List With React</h4>  
          <div className="form-group">
         <input type="text" onChange={(input) => this.changeUserInput(input.target.value)} value={this.state.userInput} className="form-control" id="title" placeholder="Title"/>
-        <button id="addbtn" type="button" className="btn btn-elegant">Add </button>
+        <button id="addbtn" type="button" onClick={()=> this.addToList(this.state.userInput)} className="btn btn-elegant">Add </button>
     </div>
 
   </div>
