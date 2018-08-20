@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -14,17 +13,27 @@ class App extends Component {
 
   
 changeUserInput(input){
-    this.setState({
+  this.setState({
       userInput: input,
-    }, ( ) => console.log(input));
+      
+    }
+    // , ( ) => console.log(input)
+  );
   }
-addToList(input){
+addToList(p){
   let listArray = this.state.list; 
-  listArray.push(input)
+  if(p == "" ){
+    // input == "" ?
+     alert("Please Write Something")
+}
+// : 
+else{
+listArray.push(p)
   this.setState({
     list : listArray,
     userInput: ""
   },()=> console.log(this.state.list))
+  }
 }
   
   render() {
