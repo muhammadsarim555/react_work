@@ -3,21 +3,38 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(){
+    super()
   
-  renderHeader(){
-    return(
-      <div id="header"> 
-          To Do List With React 
-      </div>
-    );
+    this.state = {
+      userInput : "",
+      list : [],
+    }
   }
 
+  // update(){
+  //   this.setState ({
+  //   userInput:  input,
+  // })
+
+  // }
+  // work(){
+  //   let titleValue = document.getElementById("title").value;
+
+  // }
+
+  changeUserInput(input){
+    this.setState({
+      userInput: input,
+    })
+  }
   renderTitle(){
 
     return (
     <div className="App">
+         <h4 className="h4"> To Do List With React</h4>  
          <div className="form-group">
-        <input type="text" className="form-control" id="title" placeholder="Title"/>
+        <input type="text" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} className="form-control" id="title" placeholder="Title"/>
         <button id="addbtn" type="button" className="btn btn-elegant">Add </button>
     </div>
 
@@ -29,7 +46,7 @@ class App extends Component {
     return (
       // console.log(this),
 <div className="content" >
-      {this.renderHeader()} 
+      {/* {this.renderHeader()}  */}
      {this.renderTitle()}
       </div>
     );
