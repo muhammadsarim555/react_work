@@ -38,13 +38,13 @@ addToList(input){
          <div className="form-group">
         <input type="text" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} className="form-control" id="title" placeholder="Title"/>
         <button id="addbtn" type="button" onClick={()=> this.addToList(this.state.userInput)} className="btn btn-elegant">Add </button>
-        <ul>
-          {this.state.list.map((val) =>  <li>{val}</li> ) }
-           </ul>
+        
     </div>
 
   </div>
-    
+  <ul style={{ textAlign: 'center' }}>
+          {this.state.list.map((val) =>  <li>{val}</li> ) }
+           </ul>
       </div>
   );
   }
