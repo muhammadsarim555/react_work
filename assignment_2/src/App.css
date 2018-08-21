@@ -1,8 +1,18 @@
-#navbar{
+/* #navbar{
     background-color: aqua;
-    padding: 0.3%;
+    padding: 1px;
     text-align: center;
-    font-family: inherit;
     font-size: 20px;
     
+}
+ */
+.text{
+    text-align: center !important;
+    margin: 0 auto;
+    /* margin-left: 50%; */
+}
+
+h4{
+    margin-top: 2%;
+    font-weight: bold;
 }

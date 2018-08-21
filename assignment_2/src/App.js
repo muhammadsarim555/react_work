@@ -18,28 +18,40 @@ class App extends Component {
     })
   }
 
+  
+
   navbar()
 {
   return(
-    <div id="navbar"> 
-        <h4> React Assignment 2 </h4>
-      </div>
+    <nav className="navbar navbar-dark indigo">
+    <center>
+    <span className="navbar-text white-text text">
+        React Assignment 2 
+    </span>
+    {/* <span className=" posttext">
+        Post By: Muhammad Sarim 
+    </span> */}
+    </center>
+</nav>
   );
 }
 
 renderBody(){
   return (
   <div className="container">
-      
-        <h1  style={{textAlign: "center"}}>{this.state.text}!</h1>
-          <button  type="button"onClick={() => this.updateText()}>Click For Toggle </button>
+
+        <h4  style={{textAlign: "center"}}>{this.state.text}!</h4>
+        <center>
+          <button  type="button"onClick={() => this.updateText()}  className="btn btn-elegant">Click For Toggle </button>
+          </center>
          </div>
   );
 }
 
 
 render() {
-    return(
+   "Using states, render a text Hello World, on clicking it, it should toggle to Hello Pakistan, and vice versa!"; 
+  return(
       <div>
 
         {this.navbar() }{this.renderBody()}
