@@ -18,12 +18,13 @@ class App extends Component {
   );
 }
 
-body(){
+renderBody(){
+  return (
   <div className="container">
       
         <h1 style={{textAlign: "center" , backgroundColor: "blue"}}>{this.state.text}!</h1>
          </div>
-
+  );
 }
 
 
@@ -31,8 +32,7 @@ render() {
     return(
       <div>
 
-        {this.navbar()}
-        {this.body()}
+        {this.navbar() }{this.renderBody()}
 
         </div>
     );
