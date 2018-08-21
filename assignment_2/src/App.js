@@ -6,7 +6,16 @@ class App extends Component {
     super()
     this.state = {
       text: "Hello World!", 
+      // condition: true,
     }
+  }
+
+  updateText(){
+    this.setState({
+      text : this.state.condition ? "Hello World " : "Hello Pakistan",
+      condition: !this.state.condition,
+
+    })
   }
 
   navbar()
@@ -22,7 +31,8 @@ renderBody(){
   return (
   <div className="container">
       
-        <h1 style={{textAlign: "center" , backgroundColor: "blue"}}>{this.state.text}!</h1>
+        <h1  style={{textAlign: "center"}}>{this.state.text}!</h1>
+          <button  type="button"onClick={() => this.updateText()}>Click For Toggle </button>
          </div>
   );
 }
