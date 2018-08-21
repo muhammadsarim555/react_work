@@ -8,8 +8,9 @@ class App extends Component {
       text: "Hello World!", 
       // condition: true,
     }
+    this.handleClick = this.handleClick.bind(this, 'Parameter');
   }
-
+  
   updateText(){
     this.setState({
       text : this.state.condition ? "Hello World " : "Hello Pakistan",
@@ -18,17 +19,21 @@ class App extends Component {
     })
   }
 
+  handleClick(param, e) {
+    console.log('Parameter', param);
+    console.log('Event', e);
+  }
   
 
   navbar()
 {
   return(
-    <nav className="navbar navbar-dark indigo">
+    <nav className="navbar navbar-dark indigo justify-content-center">
     <center>
     <span className="navbar-text white-text text">
         React Assignment 2 
     </span>
-    {/* <span className=" posttext">
+    {/* <span className="justify-content-right  posttext">
         Post By: Muhammad Sarim 
     </span> */}
     </center>
@@ -36,15 +41,31 @@ class App extends Component {
   );
 }
 
-renderBody(){
+renderBodyQ1(){
   return (
-  <div className="container">
+    <div className="container">
 
         <h4  style={{textAlign: "center"}}>{this.state.text}!</h4>
         <center>
           <button  type="button"onClick={() => this.updateText()}  className="btn btn-elegant">Click For Toggle </button>
           </center>
+          <hr/>
+         
          </div>
+
+  );
+}
+renderBodyQ2(){
+  return(
+  <div className="container">
+
+  <h4  style={{textAlign: "center"}}>Question No 2 </h4>
+  <center>
+    <a  href="https://medium.com/@muhammadsarim555/how-many-ways-to-define-parameter-in-react-js-754d22ee2de5" target="_blank" >How to Pass Parameter in EventListener</a>
+    </center>
+    <hr/>
+   
+   </div>
   );
 }
 
@@ -54,7 +75,8 @@ render() {
   return(
       <div>
 
-        {this.navbar() }{this.renderBody()}
+        {this.navbar() }{this.renderBodyQ1()} {this.renderBodyQ2()}
+        {/* <button onClick={this.handleClick}>checking</button> */}
 
         </div>
     );
