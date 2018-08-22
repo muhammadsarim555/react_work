@@ -16,6 +16,7 @@ console.log(this.state.ls)
 
   
 changeUserInput(input){
+  
   this.setState({
       userInput: input,
       
@@ -24,6 +25,7 @@ changeUserInput(input){
   );
   }
 addToList(p){
+
   var listArray = this.state.list;
   if(p == "" ){
     // input == "" ?
@@ -31,7 +33,9 @@ addToList(p){
   }
   // : 
   else{
-    listArray.push(p)
+  listArray.push(p)  
+    
+    // listArray.push(p)
     localStorage.setItem("todovalue" , listArray) 
 
   this.setState({
@@ -54,7 +58,8 @@ renderHeader(){
   return(<div className="App">
   <h4 className="h4"> To Do List With React</h4>  
   <div className="form-group">
- <input type="text" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} className="form-control" id="title" placeholder="Title"/>
+  
+ <input type="text" onChange={(e) => this.changeUserInput(e.target.value)}  value={this.state.userInput} className="form-control" id="title" placeholder="Title"/>
  <button addbtn type="button" onClick={()=> this.addToList(this.state.userInput)} className="btn btn-elegant  addbtn ">Add </button>
  
 </div>
@@ -69,11 +74,13 @@ getValue(){
 <ul className="list-group" style={{ textAlign: 'center' }}>
 
           {
-            this.state.list.map((val) =>  <li className="list-group-item ">
+            this.state.list.map((val , index) =>  
+             <li className="list-group-item " key= {index }>
             {val}<button type="button" className="btn btn-danger float-right addbtn"   ><i className="fa fa-trash" aria-hidden="true"></i></button>
              <button type="button" className="btn btn-danger float-right addbtn" onClick={(editValue)=> this.renderEdit(this.state.updateValue)}  ><i className="fa fa-edit" aria-hidden="true"></i></button>
+             {console.log( index)}
              </li>
-          ) }
+           ) }
             {/* <button type="button"  className="btn btn-elegant float-right addbtn"><i className="fa fa-trash" aria-hidden="true"></i></button> */}
            </ul>
   )
