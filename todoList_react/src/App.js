@@ -5,11 +5,9 @@ class App extends Component {
   constructor(){
     super()
   
-    var a = localStorage.getItem("todovalue");
     this.state = {
       userInput : "",
       list : [],
-      ls : a,
     // edit : "",
       
     }
@@ -26,15 +24,15 @@ changeUserInput(input){
   );
   }
 addToList(p){
-  let listArray = this.state.list;
+  var listArray = this.state.list;
   if(p == "" ){
     // input == "" ?
-     alert("Please Write Something")
-}
-// : 
-else{
-listArray.push(p)
-localStorage.setItem("todovalue" , listArray) 
+    alert("Please Write Something")
+  }
+  // : 
+  else{
+    listArray.push(p)
+    localStorage.setItem("todovalue" , listArray) 
 
   this.setState({
     list : listArray,
@@ -45,9 +43,11 @@ localStorage.setItem("todovalue" , listArray)
 }
 
 renderEdit(editValue){
-  this.setState({
-      userInput : editValue,
-  }, console.log(this.state.userInput , "userinput"))
+  var updateValue = prompt("Ewhist" , "");
+  let c = this.state.list;
+  // console.log(c.push(updateValue));
+  // console.log(this.state.listArray.push(updateValue) , "listarray");
+  // }, console.log(this.state.list , "userinput"))
 }
 
 renderHeader(){
@@ -71,7 +71,7 @@ getValue(){
           {
             this.state.list.map((val) =>  <li className="list-group-item ">
             {val}<button type="button" className="btn btn-danger float-right addbtn"   ><i className="fa fa-trash" aria-hidden="true"></i></button>
-             <button type="button" className="btn btn-danger float-right addbtn" onClick={(editValue)=> this.renderEdit(prompt("Enter Value" , ""))}  ><i className="fa fa-edit" aria-hidden="true"></i></button>
+             <button type="button" className="btn btn-danger float-right addbtn" onClick={(editValue)=> this.renderEdit(this.state.updateValue)}  ><i className="fa fa-edit" aria-hidden="true"></i></button>
              </li>
           ) }
             {/* <button type="button"  className="btn btn-elegant float-right addbtn"><i className="fa fa-trash" aria-hidden="true"></i></button> */}
