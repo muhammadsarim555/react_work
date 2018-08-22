@@ -26,11 +26,6 @@
   line-height: 2px;  
 
 }
-
-/* #header{
-  background-color: rgba(0, 0, 255, 0.541);
-  
-  width: 100%;
-  padding: 3%;
-  text-align: center;
-} */
+.list-group-item{
+  background-color: beige;
+}
