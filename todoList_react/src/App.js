@@ -10,6 +10,8 @@ class App extends Component {
       userInput : "",
       list : [],
       ls : a,
+    // edit : "",
+      
     }
 console.log(this.state.ls)
   }
@@ -36,9 +38,16 @@ localStorage.setItem("todovalue" , listArray)
 
   this.setState({
     list : listArray,
-    userInput: ""
+    userInput: "",
+    edit : "",
   },()=> console.log(this.state.list))
   }
+}
+
+renderEdit(editValue){
+  this.setState({
+      userInput : editValue,
+  }, console.log(this.state.userInput , "userinput"))
 }
 
 renderHeader(){
@@ -46,7 +55,7 @@ renderHeader(){
   <h4 className="h4"> To Do List With React</h4>  
   <div className="form-group">
  <input type="text" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} className="form-control" id="title" placeholder="Title"/>
- <button addbtn type="button" onClick={()=> this.addToList(this.state.userInput)} className="btn btn-elegant addbtn">Add </button>
+ <button addbtn type="button" onClick={()=> this.addToList(this.state.userInput)} className="btn btn-elegant  addbtn ">Add </button>
  
 </div>
 
@@ -61,10 +70,11 @@ getValue(){
 
           {
             this.state.list.map((val) =>  <li className="list-group-item ">
-            {val} <button type="button" className="btn btn-danger addbtn"  ><i className="fa fa-edit" aria-hidden="true"></i></button>
-             <button type="button" className="btn btn-danger addbtn"  ><i className="fa fa-trash" aria-hidden="true"></i></button></li>
+            {val}<button type="button" className="btn btn-danger float-right addbtn"   ><i className="fa fa-trash" aria-hidden="true"></i></button>
+             <button type="button" className="btn btn-danger float-right addbtn" onClick={(editValue)=> this.renderEdit(prompt("Enter Value" , ""))}  ><i className="fa fa-edit" aria-hidden="true"></i></button>
+             </li>
           ) }
-            <button type="button"  className="btn btn-elegant addbtn"><i className="fa fa-trash" aria-hidden="true"></i></button>
+            {/* <button type="button"  className="btn btn-elegant float-right addbtn"><i className="fa fa-trash" aria-hidden="true"></i></button> */}
            </ul>
   )
 }
