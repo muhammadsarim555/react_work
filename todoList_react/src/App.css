@@ -27,5 +27,9 @@
 
 }
 .list-group-item{
+  /* list-style-type: none; */
   background-color: beige;
+  margin-top: 2%;
+  text-align: left;
+  width: 100%;
 }

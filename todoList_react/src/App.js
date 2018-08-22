@@ -57,10 +57,10 @@ getValue(){
   var b = localStorage.getItem("todovalue");
   return(
     
-<ul style={{ textAlign: 'center' }}>
+<ul className="list-group" style={{ textAlign: 'center' }}>
 <span>
           {
-            this.state.list.map((val) =>  <li className="list-group-item">{val}</li> ) }
+            this.state.list.map((val) =>  <li className="list-group-item ">{val}</li> ) }
       </span>     
            </ul>
   )
