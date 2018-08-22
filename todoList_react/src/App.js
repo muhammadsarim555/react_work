@@ -45,7 +45,7 @@ addToList(p){
 renderEdit(editValue){
   var updateValue = prompt("Ewhist" , "");
   let c = this.state.list;
-  console.log(c.push(updateValue));
+  // console.log(c.push(updateValue));
   // console.log(this.state.listArray.push(updateValue) , "listarray");
   // }, console.log(this.state.list , "userinput"))
 }
