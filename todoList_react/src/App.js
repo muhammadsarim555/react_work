@@ -61,10 +61,10 @@ getValue(){
 
           {
             this.state.list.map((val) =>  <li className="list-group-item ">
-            {val} <button type="button" className="btn btn-danger addbtn"  >Edit</button>
-             <button type="button" className="btn btn-danger addbtn"  >Delete</button></li>
+            {val} <button type="button" className="btn btn-danger addbtn"  ><i className="fa fa-edit" aria-hidden="true"></i></button>
+             <button type="button" className="btn btn-danger addbtn"  ><i className="fa fa-trash" aria-hidden="true"></i></button></li>
           ) }
-            <button type="button"  className="btn btn-elegant addbtn">Delete</button>
+            <button type="button"  className="btn btn-elegant addbtn"><i className="fa fa-trash" aria-hidden="true"></i></button>
            </ul>
   )
 }
