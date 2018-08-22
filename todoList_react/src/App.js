@@ -46,12 +46,13 @@ addToList(p){
   }
 }
 
-renderEdit(editValue){
-  var updateValue = prompt("Ewhist" , "");
+renderEdit(index , b){
+  var updateValue = prompt("Write For Update" , "");
   let c = this.state.list;
   // console.log(c.push(updateValue));
   // console.log(this.state.listArray.push(updateValue) , "listarray");
-  // }, console.log(this.state.list , "userinput"))
+  // },)
+   console.log(b , "editvalue")
 }
 
 renderHeader(){
@@ -77,11 +78,10 @@ getValue(){
             this.state.list.map((val , index) =>  
              <li className="list-group-item " key= {index }>
             {val}<button type="button" className="btn btn-danger float-right addbtn"   ><i className="fa fa-trash" aria-hidden="true"></i></button>
-             <button type="button" className="btn btn-danger float-right addbtn" onClick={(editValue)=> this.renderEdit(this.state.updateValue)}  ><i className="fa fa-edit" aria-hidden="true"></i></button>
+             <button type="button" className="btn btn-danger float-right addbtn" onClick={ this.renderEdit.bind(this , index)}  ><i className="fa fa-edit" aria-hidden="true"></i></button>
              {console.log( index)}
              </li>
            ) }
-            {/* <button type="button"  className="btn btn-elegant float-right addbtn"><i className="fa fa-trash" aria-hidden="true"></i></button> */}
            </ul>
   )
 }
