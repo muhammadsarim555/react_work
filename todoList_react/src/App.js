@@ -24,6 +24,7 @@ class App extends Component {
       // , ( ) => console.log(input)
     );
   }
+  
   addToList(p) {
 
     var listArray = this.state.list;
@@ -34,10 +35,6 @@ class App extends Component {
     // : 
     else {
       listArray.push(p)
-
-      // listArray.push(p)
-      localStorage.setItem("todovalue", listArray)
-
       this.setState({
         list: listArray,
         userInput: "",
@@ -46,7 +43,7 @@ class App extends Component {
     }
   }
 
-  renderEdit(val , index) {
+  renderEdit(val, index) {
     var updateValue = prompt("Write For Update", "");
     let c = this.state.list;
     console.log(index);
@@ -57,7 +54,7 @@ class App extends Component {
 
   }
 
-  deleteItem(val,index) {
+  deleteItem(val, index) {
     console.log(val)
     let c = this.state.list;
     console.log(c)
@@ -74,7 +71,7 @@ class App extends Component {
       <h4 className="h4"> To Do List With React</h4>
       <div className="form-group">
 
-        <input type="text" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} className="form-control" id="title" placeholder="Title" />
+        <input type="text" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} className="form-control" id="title" placeholder="Title" autocomplete="off" />
         <button addbtn type="button" onClick={() => this.addToList(this.state.userInput)} className="btn btn-elegant  addbtn ">Add </button>
 
       </div>
@@ -83,7 +80,6 @@ class App extends Component {
   }
 
   getValue() {
-    var b = localStorage.getItem("todovalue");
     return (
 
       <ul className="list-group" style={{ textAlign: 'center' }}>
