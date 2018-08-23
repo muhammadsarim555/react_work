@@ -46,9 +46,10 @@ class App extends Component {
     }
   }
 
-  renderEdit(index) {
+  renderEdit(val , index) {
     var updateValue = prompt("Write For Update", "");
     let c = this.state.list;
+    console.log(index);
     c[index] = updateValue
     this.setState({
       list: c
@@ -92,7 +93,7 @@ class App extends Component {
             <li className="list-group-item " key={index}>
               {val}<button type="button" className="btn btn-danger float-right addbtn" onClick={this.deleteItem.bind(this, val, index)} ><i className="fa fa-trash" aria-hidden="true"></i></button>
               <button type="button" className="btn btn-danger float-right addbtn" onClick={this.renderEdit.bind(this, val, index)}  ><i className="fa fa-edit" aria-hidden="true"></i></button>
-              {console.log(index)}
+              {/* {console.log(index)} */}
             </li>
           )}
       </ul>
