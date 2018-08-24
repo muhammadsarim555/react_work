@@ -29,11 +29,14 @@ setInterval(()=>{
        const a = "React Digital Watch " 
 
     return (
-      <div className = "content" > 
+      <div>
       <h3 className="h3">{a}</h3>
-      {/* Designed By <strong>Muhammad Sarim </strong> */}
-      <div id="watch">
-      <h3 className="ditit">{this.state.time.toLocaleTimeString()}</h3>
+     
+      <div id="watch"> 
+        <div className="border"> 
+      <p className="ditit">{this.state.time.toLocaleTimeString()}</p>
+      {/* </div> */}
+      </div>
       </div>
        </div>
     );

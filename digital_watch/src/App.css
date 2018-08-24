@@ -8,23 +8,20 @@ body{
     padding: 1%;
     margin: 0;
 }
-.ditit{
-    text-align: center;
-    color: rgb(0, 102, 255);
-    font-size: 30px;
-    /* background-color: black; */
-}
-/* #border{
-    background-color: black;
-} */
-h3{
-    border: 2px solid black;
+
+.border{
+    background-color: blue;
 }
 
-#watch{
-    background-color: rgba(255, 255, 255, 0.76);
-    width: 30%;
+p{
+    margin-top: 2% !important;
+    text-align: center;
+    color: rgb(2, 141, 255);
+    font-size: 30px;
+    background-color: rgba(238, 9, 9, 0.76);
+    width: 17%;
     margin : 0px auto;
-    height: 500px;
-    line-height: 500px;
+    height: 200px;
+    line-height:200px;
+
 }
