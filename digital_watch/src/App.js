@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from './image.jpg';
 import './App.css';
 
 class App extends Component {
@@ -28,10 +29,11 @@ setInterval(()=>{
        const a = "React Digital Watch " 
 
     return (
-         <div className = "content" > 
+      <div className = "content" > 
       <h3 className="h3">{a}</h3>
-      
-      <h3>{this.state.time.toLocaleTimeString()}</h3>
+      <div id="watch">
+      <h3 className="ditit">{this.state.time.toLocaleTimeString()}</h3>
+      </div>
        </div>
     );
   }
