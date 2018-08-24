@@ -32,7 +32,9 @@ setInterval(()=>{
       <div className = "content" > 
       <h3 className="h3">{a}</h3>
       <div id="watch">
+      <div id="border">
       <h3 className="ditit">{this.state.time.toLocaleTimeString()}</h3>
+      </div>
       </div>
        </div>
     );
