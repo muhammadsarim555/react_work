@@ -10,23 +10,18 @@ class App extends Component {
   render() {
     return (
       <div className="app"> 
+    <h3 className="heading">Register Form </h3>
     <div className="form-group row">
-        {/* <div className="col-sm-10"> */}
-            <input type="email" className="form-control" id="inputEmail3" placeholder="Email" />
-        {/* </div> */}
+            <input type="email" className="form-control" id="email" placeholder="Email" />
     </div>
 
     <div className="form-group row">
-        {/* <div className="col-sm-10"> */}
-            <input type="password" className="form-control" id="inputPassword3" placeholder="Password"/ >
-        {/* </div> */}
+            <input type="password" className="form-control" id="password" placeholder="Password"/ >
     </div>
 
-    <div className="form-group row">
-        <div className="col-sm-10">
-            <button type="submit" className="btn btn-primary btn-md">Sign in</button>
-        </div>
-    </div>
+        <center>
+            <button type="submit" className="btn btn-primary justify-content-center ">Sign in</button>
+            </center>
     </div>
     );
   }
