@@ -5,7 +5,16 @@ import './App.css';
 class App extends Component {
   constructor(){
     super()
+    this.state = {
+      email : "",
+      password : "",
+    }
 
+  }
+  updateValue(){
+    this.setState({
+      // email : 
+    })
   }
   render() {
     return (
