@@ -11,15 +11,15 @@ class App extends Component {
     return (
       <div className="app"> 
     <div className="form-group row">
-        <div className="col-sm-10">
+        {/* <div className="col-sm-10"> */}
             <input type="email" className="form-control" id="inputEmail3" placeholder="Email" />
-        </div>
+        {/* </div> */}
     </div>
 
     <div className="form-group row">
-        <div className="col-sm-10">
+        {/* <div className="col-sm-10"> */}
             <input type="password" className="form-control" id="inputPassword3" placeholder="Password"/ >
-        </div>
+        {/* </div> */}
     </div>
 
     <div className="form-group row">
