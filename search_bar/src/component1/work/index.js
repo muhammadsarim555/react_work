@@ -23,15 +23,17 @@ search(p){
         
     })
     this.setState({
-        result
+        result , text
     })
-    console.log(result)
+    console.log(text)
 }
 
 renderBody(){
-    const { list , result } = this.state;
-    const items = result.length ? result : list;
+    const { list , result , text} = this.state;
+    const items = text ? result : list;
     return(
+        <div>
+       {text && <h1>You are Searching "{text}" </h1>}
         
         <ol>
             {
@@ -43,7 +45,7 @@ renderBody(){
         }
         </ol>
 
-        // <input type=""text />
+        </div>
     );
 }
     render() {
