@@ -16,8 +16,11 @@ search(p){
     const text = p.target.value;
 
    const result = list.filter(function(item) {
-        return item.indexOf(text) != -1 
+        return item.toLowerCase().indexOf(text.toLowerCase()) != -1 
         
+    })
+    this.setState({
+       list: result
     })
     console.log(result)
 }
