@@ -3,26 +3,26 @@ import logo from '../.././logo.svg';
 import '../.././App.css';
 
 class App extends Component {
-    constructor(){
-        super();
-        this.state = {
-            list : ["Sarim"  , "Rohail"  ,"Manal" , 'Faraz' , 'Umar' ,'Masood' , 'Afzal'],
-        }
+    
+constructor(){
+    super();
+    this.state = {
+        list: ["sarim" , "rohail " , "masood" ],
     }
-    renderHeader(){
-        <h3 className="color">Search Bar</h3>
-        
-    }
-    // renderBody(){
-        
-    // }
-  render() {
-    return (
-      <div className="App">
-        {this.renderHeader}
-      </div>
-    );
-  }
 }
+
+renderHeader(){
+    return(
+        <h3>Searching</h3>
+    );
+}
+    render() {
+      return (
+        <div className="App">
+            {this.renderHeader()}
+        </div>
+      );
+    }
+  }
 
 export default App;
