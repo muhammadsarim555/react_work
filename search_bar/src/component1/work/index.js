@@ -12,7 +12,14 @@ constructor(){
 }
 
 search(p){
-    console.log(p.target.value)
+    const { list } = this.state;
+    const text = p.target.value;
+
+   const result = list.filter(function(item) {
+        return item == text
+        
+    })
+    console.log(result)
 }
 
 renderBody(){
@@ -36,7 +43,7 @@ renderBody(){
     render() {
       return (
         <div className="App">
-            <input type="text" className="input" onChange={this.search} placeholder="Search "  />
+            <input type="text" className="input" onChange={() => this.search()} placeholder="Search "  />
             {this.renderBody()}
         </div>
       );
