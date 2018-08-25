@@ -7,19 +7,37 @@ class App extends Component {
 constructor(){
     super();
     this.state = {
-        list: ["sarim" , "rohail " , "masood" ],
+        list: ["sarim" , "rohail " , "masood" , "shahid" , "imran" , "basit" , "shahrukh"],
     }
 }
 
-renderHeader(){
+search(){
+    console.log(this , "egent")
+}
+
+renderBody(){
+    const { list } = this.state;
+
     return(
-        <h3>Searching</h3>
+        
+        <ol>
+            {
+                list.map( function(item) {
+                return <li> {item} </li>
+            })
+        
+        
+        }
+        </ol>
+
+        // <input type=""text />
     );
 }
     render() {
       return (
         <div className="App">
-            {this.renderHeader()}
+            <input type="text" className="input" onChange={this.search}  />
+            {this.renderBody()}
         </div>
       );
     }
