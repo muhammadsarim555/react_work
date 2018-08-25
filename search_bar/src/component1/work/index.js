@@ -16,7 +16,7 @@ search(p){
     const text = p.target.value;
 
    const result = list.filter(function(item) {
-        return item == text
+        return item.indexOf(text) != -1 
         
     })
     console.log(result)
@@ -43,7 +43,7 @@ renderBody(){
     render() {
       return (
         <div className="App">
-            <input type="text" className="input" onChange={() => this.search()} placeholder="Search "  />
+            <input type="text" className="input" onChange={ this.search.bind(this)} placeholder="Search "  />
             {this.renderBody()}
         </div>
       );
