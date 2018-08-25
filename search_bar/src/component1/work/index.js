@@ -8,6 +8,7 @@ constructor(){
     super();
     this.state = {
         list: ["sarim" , "rohail " , "masood" , "shahid" , "imran" , "basit" , "shahrukh"],
+        result: [],
     }
 }
 
@@ -20,19 +21,19 @@ search(p){
         
     })
     this.setState({
-       list: result
+        result
     })
     console.log(result)
 }
 
 renderBody(){
-    const { list } = this.state;
-
+    const { list , result } = this.state;
+    const items = result.length ? result : list;
     return(
         
         <ol>
             {
-                list.map( function(item , index) {
+                items.map( function(item , index) {
                 return <li key={index}> {item} </li>
             })
         
