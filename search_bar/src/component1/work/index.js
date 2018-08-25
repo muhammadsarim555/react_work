@@ -11,8 +11,8 @@ constructor(){
     }
 }
 
-search(){
-    console.log(this , "egent")
+search(p){
+    console.log(p.target.value)
 }
 
 renderBody(){
@@ -22,8 +22,8 @@ renderBody(){
         
         <ol>
             {
-                list.map( function(item) {
-                return <li> {item} </li>
+                list.map( function(item , index) {
+                return <li key={index}> {item} </li>
             })
         
         
@@ -36,7 +36,7 @@ renderBody(){
     render() {
       return (
         <div className="App">
-            <input type="text" className="input" onChange={this.search}  />
+            <input type="text" className="input" onChange={this.search} placeholder="Search "  />
             {this.renderBody()}
         </div>
       );
