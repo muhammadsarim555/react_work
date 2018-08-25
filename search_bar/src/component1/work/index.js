@@ -7,7 +7,7 @@ class App extends Component {
 constructor(){
     super();
     this.state = {
-        list: ["sarim" , "rohail " , "masood" , "shahid" , "imran" , "basit" , "shahrukh"],
+        list: ["sarim shahid" , "rohail " , "masood" , "shahid" , "imran" , "basit" , "shahrukh"],
         result: [],
     }
 }
@@ -17,7 +17,9 @@ search(p){
     const text = p.target.value;
 
    const result = list.filter(function(item) {
-        return item.toLowerCase().indexOf(text.toLowerCase()) != -1 
+    const lowerItem = item.toLowerCase();
+    const lowerText =   text.toLowerCase(); 
+    return lowerItem.substring(0 , lowerText.length).indexOf(lowerText) != -1 
         
     })
     this.setState({
