@@ -20,12 +20,12 @@ search(p){
     const lowerItem = item.toLowerCase();
     const lowerText =   text.toLowerCase(); 
     return lowerItem.substring(0 , lowerText.length).indexOf(lowerText) != -1 
-        
+        // return item.indexOf(text) != -1
     })
     this.setState({
         result , text
     })
-    console.log(text)
+    console.log(result)
 }
 
 renderBody(){
