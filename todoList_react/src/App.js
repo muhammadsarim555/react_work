@@ -20,12 +20,9 @@ class App extends Component {
     this.setState({
       userInput: input.target.value,
 
-    }
-      // , ( ) => console.log(input)
-    )
+    })
     console.log(this.state.userInput);
-
-  }
+}
 
   addToList(p) {
 
