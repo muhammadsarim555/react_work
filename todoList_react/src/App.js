@@ -22,27 +22,21 @@ class App extends Component {
 
     }
       // , ( ) => console.log(input)
-  )
-  console.log(this.state.userInput);
-    
+    )
+    console.log(this.state.userInput);
+
   }
-  
+
   addToList(p) {
 
     var listArray = this.state.list;
-    if (p == "") {
-      // input == "" ?
-      alert("Please Write Something")
-    }
-    // : 
-    else {
+    p === "" ? alert("Please Write Something") :
       listArray.push(p)
-      this.setState({
-        list: listArray,
-        userInput: "",
-        edit: "",
-      }, () => console.log(this.state.list))
-    }
+    this.setState({
+      list: listArray,
+      userInput: "",
+      edit: "",
+    }, () => console.log(this.state.list))
   }
 
   renderEdit(val, index) {
@@ -73,7 +67,7 @@ class App extends Component {
       <h4 className="h4"> To Do List With React</h4>
       <div className="form-group">
 
-        <input type="text" onChange={  this.changeUserInput.bind(this)} value={this.state.userInput} className="form-control" id="title" placeholder="Title"  />
+        <input type="text" onChange={this.changeUserInput.bind(this)} value={this.state.userInput} className="form-control" id="title" placeholder="Title" />
         <button addbtn type="button" onClick={() => this.addToList(this.state.userInput)} className="btn btn-elegant  addbtn ">Add </button>
 
       </div>
