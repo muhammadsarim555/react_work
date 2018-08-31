@@ -12,24 +12,16 @@ class App extends Component {
     this.state = {
       email : "sarim@gmail.com",
       password  : "sarimsarim",
-      userText : "",
+      userEmail : "",
       userPassword : "",
     }
   }
-    renderUserInput(i){
-      // console.log(i.target.value)
-    const userText = i.target.value;
-    this.setState ({
-      userText  , 
-    })
+
+  login(){
+  
+    console.log()
   }
 
-  renderUserPassword(i){
-    const userPassword = i.target.value;
-    this.setState({
-      userPassword,
-    })
-  }
   renderSubmit(){
 
     const { email , password , userPassword , userText}= this.state;
@@ -47,10 +39,12 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
-          <input  onChange={this.renderUserInput.bind(this)} value={this.state.userText} />
-          <input onChange={this.renderUserPassword.bind(this)} value={this.state.userPassword} />
-          <button onClick={this.renderSubmit.bind(this)}>Submit </button>
+          <input className="form-control"  onChange={(e) => e.target.value} value={this.state.userText} />
+      {/* <input className="form-control" onChange={this.renderUserPassword.bind(this)} value={this.state.userPassword} /> */}
+      <button onClick={this.renderSubmit.bind(this)}>Submit </button>
+
         </header>
+        {this.login()}
       
       </div>
     );
