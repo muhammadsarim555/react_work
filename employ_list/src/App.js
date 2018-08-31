@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import swal from "sweetalert";
+
+
+
 
 class App extends Component {
   constructor(){
@@ -22,7 +26,7 @@ class App extends Component {
   renderSubmit(){
 
     const { email , password , userEmail }= this.state;
-     userEmail === email ? console.log("YOu have been logined") : console.log("wrong");
+     userEmail === email ? swal("Good job!", "You have been logined!", "success") : console.log("wrong");
      this.setState ({
       userEmail: ""
      })
