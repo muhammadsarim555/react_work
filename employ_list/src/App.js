@@ -17,33 +17,37 @@ class App extends Component {
     }
   }
 
-  login(){
+  login(v){
+      const { email , password , userEmail , userPassword}= this.state;
+        v === email ? swal("Congragulation!", "You have been logined!", "success") : swal("Error!", "The Email Is Badly Access!", "error");
+        
+        // && userPassword === password 
   
-    console.log()
   }
 
-  renderSubmit(){
+  // renderSubmit(){
 
-    const { email , password , userPassword , userText}= this.state;
-    userText === email && userPassword === password ? swal("Congragulation!", "You have been logined!", "success") : swal("Error!", "The Email Is Badly Access!", "error");
-     this.setState ({
-       userText : "",
-      userPassword: ""
-     })
-      console.log(userPassword);
+  //    this.setState ({
+  //      userText : "",
+  //     userPassword: ""
+  //    })
+  //     console.log(userPassword);
     
-  }
+  // }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-          <input className="form-control"  onChange={(e) => e.target.value} value={this.state.userText} />
-      {/* <input className="form-control" onChange={this.renderUserPassword.bind(this)} value={this.state.userPassword} /> */}
-      <button onClick={this.renderSubmit.bind(this)}>Submit </button>
+        <div className="login">
+  <div className="login-triangle"></div>
+  
+  <h2 className="login-header">Log in</h2>
 
-        </header>
+  <form className="login-container">
+    <p><input type="email" placeholder="Email"/></p>
+    <p><input type="password" placeholder="Password" /></p>
+    <p><input type="submit" value="Log in"/></p>
+  </form>
+</div>
         {this.login()}
       
       </div>
