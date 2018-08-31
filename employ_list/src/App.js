@@ -35,12 +35,21 @@ class App extends Component {
 
   renderAuth(){
       const { email , password } = this.state;
-      email == "admin@domain.com" && password == "admin" ? swal("Good job!", "You clicked the button!", "success")
-      : swal("Error!", "Your Email Might Wrong!", "error")
+      if(email == "admin@domain.com" && password == "admin") {  
+        this.setState({ currentUser : true }), console.log(this.state.currentUser)
+        swal("Good job!", "You clicked the button!", "success")
+        this.setState({
+          email : "",
+          password : "",
+        })
+    }
+    else {  
+    swal("Error!", "Your Email Might Wrong!", "error")
       this.setState({
         email : "",
         password : "",
       })
+    }
   }
   render() {
     return (
@@ -49,8 +58,8 @@ class App extends Component {
   <div className="login-triangle"></div>
   
   <h2 className="login-header">Log in</h2>
-    <p><input type="email" placeholder="Email" value={this.state.email} onChange={(e) => this.renderLoginEmail(e.target.value)} /></p>
-    <p><input type="password" placeholder="Password" value={this.state.password} onChange={(e) => this.renderLoginPassword(e.target.value)} /></p>
+    <p><input type="email" placeholder="Email" value={this.state.email} onChange={(e) => this.renderLoginEmail(e.target.value)} required /></p>
+    <p><input type="password" placeholder="Password" value={this.state.password} onChange={(e) => this.renderLoginPassword(e.target.value)} required /></p>
     <p><input type="submit" value="Log in" onClick={this.renderAuth.bind(this)} /></p>
 </div>
       
