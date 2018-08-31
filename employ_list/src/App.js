@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       email : "",
       password  : "",
-      currentUser  : false,
+      currentUser  : null,
       
     }
   }
@@ -20,6 +20,8 @@ class App extends Component {
   renderLoginEmail(v){
    this.setState({
      email : v,
+     currentUser : false,
+     
    } )
   //  console.log(this.state.email)
   
@@ -29,6 +31,7 @@ class App extends Component {
   renderLoginPassword(v){
     this.setState({
       password : v,
+      currentUser : false,
     })
     
   }
@@ -36,24 +39,43 @@ class App extends Component {
   renderAuth(){
       const { email , password } = this.state;
       if(email == "admin@domain.com" && password == "admin") {  
-        this.setState({ currentUser : true }), console.log(this.state.currentUser)
+        // this.setState({currentUser : true,}) , console.log(this.state.currentUser)
         swal("Good job!", "You clicked the button!", "success")
         this.setState({
+          currentUser : true,
           email : "",
           password : "",
+          
         })
-    }
+      console.log(this.state.currentUser)
+        
+        }
     else {  
     swal("Error!", "Your Email Might Wrong!", "error")
       this.setState({
         email : "",
         password : "",
+        currentUser : false
       })
+      console.log(this.state.currentUser)
     }
   }
+
+  // logOut(){
+  //   // const {currentUser } = this.state;
+  //   // const result = currentUser === true;
+  //   // result && <button className="btn btn-default" >Logout </button>
+  //   return(
+
+  //   );
+  // }
+
   render() {
+    const {currentUser } = this.state;
+    const result = currentUser === true;
     return (
       <div className="App">
+      {result && <button className="btn btn-default" >Logout </button> }
         <div className="login">
   <div className="login-triangle"></div>
   
