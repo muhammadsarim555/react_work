@@ -10,30 +10,38 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      email : "sarim@gmail.com",
-      password  : "sarimsarim",
-      userEmail : "",
-      userPassword : "",
+      email : "",
+      password  : "",
+      currentUser  : false,
+      
     }
   }
 
-  login(v){
-      const { email , password , userEmail , userPassword}= this.state;
-        v === email ? swal("Congragulation!", "You have been logined!", "success") : swal("Error!", "The Email Is Badly Access!", "error");
-        
-        // && userPassword === password 
+  renderLoginEmail(v){
+   this.setState({
+     email : v,
+   } )
+  //  console.log(this.state.email)
   
+
+}
+
+  renderLoginPassword(v){
+    this.setState({
+      password : v,
+    })
+    
   }
 
-  // renderSubmit(){
-
-  //    this.setState ({
-  //      userText : "",
-  //     userPassword: ""
-  //    })
-  //     console.log(userPassword);
-    
-  // }
+  renderAuth(){
+      const { email , password } = this.state;
+      email == "admin@domain.com" && password == "admin" ? swal("Good job!", "You clicked the button!", "success")
+      : swal("Error!", "Your Email Might Wrong!", "error")
+      this.setState({
+        email : "",
+        password : "",
+      })
+  }
   render() {
     return (
       <div className="App">
@@ -41,14 +49,11 @@ class App extends Component {
   <div className="login-triangle"></div>
   
   <h2 className="login-header">Log in</h2>
-
-  <form className="login-container">
-    <p><input type="email" placeholder="Email"/></p>
-    <p><input type="password" placeholder="Password" /></p>
-    <p><input type="submit" value="Log in"/></p>
-  </form>
+    <p><input type="email" placeholder="Email" value={this.state.email} onChange={(e) => this.renderLoginEmail(e.target.value)} /></p>
+    <p><input type="password" placeholder="Password" value={this.state.password} onChange={(e) => this.renderLoginPassword(e.target.value)} /></p>
+    <p><input type="submit" value="Log in" onClick={this.renderAuth.bind(this)} /></p>
 </div>
-        {this.login()}
+      
       
       </div>
     );
