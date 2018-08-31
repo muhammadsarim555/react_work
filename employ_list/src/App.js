@@ -33,7 +33,7 @@ class App extends Component {
   renderSubmit(){
 
     const { email , password , userPassword , userText}= this.state;
-    userText === email && userPassword === password ? swal("Good job!", "You have been logined!", "success") : console.log("wrong");
+    userText === email && userPassword === password ? swal("Congragulation!", "You have been logined!", "success") : swal("Error!", "The Email Is Badly Access!", "error");
      this.setState ({
        userText : "",
       userPassword: ""
