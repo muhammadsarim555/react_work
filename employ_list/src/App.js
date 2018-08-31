@@ -47,7 +47,7 @@ class App extends Component {
           password : "",
           
         })
-      console.log(this.state.currentUser)
+      // console.log(this.state.currentUser)
         
         }
     else {  
@@ -57,27 +57,25 @@ class App extends Component {
         password : "",
         currentUser : false
       })
-      console.log(this.state.currentUser)
+      // console.log(this.state.currentUser)
     }
   }
 
-  // logOut(){
-  //   // const {currentUser } = this.state;
-  //   // const result = currentUser === true;
-  //   // result && <button className="btn btn-default" >Logout </button>
-  //   return(
-
-  //   );
-  // }
+  logOut(){
+    this.setState({
+      currentUser : false,
+    })
+    console.log(this.state.currentUser)
+  }
 
   render() {
     const {currentUser } = this.state;
     const result = currentUser === true;
     return (
       <div className="App">
-      {result && <button className="btn btn-default" >Logout </button> }
+      {result && <button className="btn btn-default" onClick={this.logOut.bind(this)} >Logout </button> }
         <div className="login">
-  <div className="login-triangle"></div>
+  <div className="login-triangle"></div> 
   
   <h2 className="login-header">Log in</h2>
     <p><input type="email" placeholder="Email" value={this.state.email} onChange={(e) => this.renderLoginEmail(e.target.value)} required /></p>
