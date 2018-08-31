@@ -16,7 +16,7 @@ search(p){
     const { list } = this.state;
     const text = p.target.value;
 
-   const result = list.filter(function(item) {
+    const result = list.filter(function(item) {
     const lowerItem = item.toLowerCase();
     const lowerText =   text.toLowerCase(); 
     return lowerItem.substring(0 , lowerText.length).indexOf(lowerText) != -1 
@@ -29,11 +29,11 @@ search(p){
 }
 
 renderBody(){
-    const { list , result , text} = this.state;
+    const { list , result , text } = this.state;
     const items = text ? result : list;
     return(
         <div>
-       {text && <h1>You are Searching "{text}" </h1>}
+       {text &&  <h1>You are Searching "{text}" </h1>}
         
         <ol>
             {

@@ -8,22 +8,26 @@ class App extends Component {
     this.state = {
       email : "sarim@gmail.com",
       password  : "sarimsarim",
-
+      userEmail : ""
     }
   }
-    userInput(i){
+    renderUserInput(i){
       // console.log(i.target.value)
-    const userValue = i.target.value;
+    const userEmail = i.target.value;
     this.setState ({
-      userEmail : userValue,
+      userEmail ,
     })
   }
 
-  renderSubmit(i){
+  renderSubmit(){
 
     const { email , password , userEmail }= this.state;
      userEmail === email ? console.log("YOu have been logined") : console.log("wrong");
-    console.log(userEmail);
+     this.setState ({
+      userEmail: ""
+     })
+      console.log(userEmail);
+    
   }
   render() {
     return (
@@ -31,7 +35,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
-          <input onChange={this.userInput.bind(this)} />
+          <input  onChange={this.renderUserInput.bind(this)} value={this.state.userEmail} />
           <button onClick={this.renderSubmit.bind(this)}>Submit </button>
         </header>
         <p className="App-intro">
