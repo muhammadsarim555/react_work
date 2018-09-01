@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import swal from "sweetalert";
 
@@ -130,13 +129,10 @@ logOut(){
 
   renderObject(){
     const {employ_list , currentUser} = this.state;
-    const result = currentUser == true;
-    return employ_list.map((v,i)=>{
-      return 
-      <table class="table">
-      <thead>
-      <tr>
-              <th  scope="row">{i+1}</th>
+    const result = currentUser === true;
+     employ_list.map((v,i)=>{
+      return <tr>
+              <td  >{i+1}</td>
               <td>{v.firstName}</td>
               <td>{v.lastName}</td>
               <td>{v.objEmail}</td>
@@ -147,9 +143,40 @@ logOut(){
                   <td><button  className="btn btn-outline-danger"><i className="fa fa-trash-o"></i></button></td>
               
             </tr>
-            </thead>
-            </table>
     })
+  }
+
+  renderApp(){
+    return(
+      <div>
+    <button className="btn btn-default" onClick={this.logOut.bind(this)} >Logout </button>
+    {/* <div className="table-responsive"> */}
+    <table className="table table-striped table-dark text-center table-responsive">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Job Start Date</th>
+          
+          <td>Edit</td>
+          <td>Delete</td>
+             {/* <div>
+            </div> */}
+          
+        </tr>
+      </thead>
+      <tbody>
+        {
+          this.renderObject()
+        }
+      </tbody>
+    </table>
+  </div>
+  // </div>
+  );
   }
 
   render() {
@@ -159,9 +186,8 @@ logOut(){
       <div className="App">
 
       {!currentUser && this.renderLogin()}    
-      {result && <button className="btn btn-default" onClick={this.logOut.bind(this)} >Logout </button>}
       {result && this.renderForm() }
-      {result && this.renderObject()}
+      {result && this.renderApp()}
 
       
       
