@@ -13,6 +13,11 @@ class App extends Component {
       email : "",
       password  : "",
       currentUser  : null,
+      firstName : "",
+      lastName : "",
+      objEmail : "",
+      salary : "",
+      date : "",
       
     }
   }
