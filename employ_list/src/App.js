@@ -130,35 +130,26 @@ logOut(){
   renderObject(){
     const {employ_list , currentUser} = this.state;
     const result = currentUser === true;
-  //     return employ_list.map((v,i)=>{
-  //      return ( <tr>
-  //             <td  >{i+1}</td>
-  //             <td>{v.firstName}</td>
-  //             <td>{v.lastName}</td>
-  //             <td>{v.objEmail}</td>
-  //             <td>{v.salary}</td>
-  //             <td>{v.date}</td>
+    return(
+    <tbody> 
+    {employ_list.map((v,i)=>{
+       return  <tr>
+              <td  >{i+1}</td>
+              <td>{v.firstName}</td>
+              <td>{v.lastName}</td>
+              <td>{v.objEmail}</td>
+              <td>{v.salary}</td>
+              <td>{v.date}</td>
               
-  //                 <td><button  className="btn btn-outline-info"  data-toggle="modal" data-target="#updateDataModal"><i className="fa fa-pencil-square-o"></i></button></td>
-  //                 <td><button  className="btn btn-outline-danger"><i className="fa fa-trash-o"></i></button></td>
+                  <td><button  className="btn btn-outline-info"  data-toggle="modal" data-target="#updateDataModal"><i className="fa fa-pencil-square-o"></i></button></td>
+                  <td><button  className="btn btn-outline-danger"><i className="fa fa-trash-o"></i></button></td>
               
-  //           </tr>
-  // )
-  //   })
-  return (
-
-    <ul className="list-group" style={{ textAlign: 'center' }}>
-
-      {
-        employ_list.map((val, index) =>
-          <li className="list-group-item " key={index}>
-            {val}<button type="button" className="btn btn-danger float-right addbtn" ><i className="fa fa-trash" aria-hidden="true"></i></button>
-            <button type="button" className="btn btn-danger float-right addbtn"  ><i className="fa fa-edit" aria-hidden="true"></i></button>
-            {/* {console.log(index)} */}
-          </li>
-        )}
-    </ul>
-  )
+            </tr>
+  
+    })
+    }
+  </tbody>
+    )
 }
 
   renderApp(){
@@ -178,16 +169,15 @@ logOut(){
           
           <td>Edit</td>
           <td>Delete</td>
-             {/* <div>
-            </div> */}
+            
           
         </tr>
       </thead>
-      <tbody>
-        {/* {
+      {/* <tbody> */}
+        {
           this.renderObject()
-        } */}
-      </tbody>
+        }
+      {/* </tbody> */}
     </table>
   </div>
   // </div>
@@ -203,7 +193,6 @@ logOut(){
       {!currentUser && this.renderLogin()}    
       {result && this.renderForm() }
       {result && this.renderApp()}
-      {result && this.renderObject()}
 
       
       
