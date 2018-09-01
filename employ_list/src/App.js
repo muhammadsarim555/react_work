@@ -111,8 +111,8 @@ logOut(){
         <td>Cell</td>
         <td>Cell</td>
         <td>Cell</td>
-        <td><button>Edit </button></td>
-        <td><button>Delete </button></td>
+        <td><button> Edit </button></td>
+        <td><button> Delete </button></td>
         
         
       </tr>
@@ -133,11 +133,12 @@ logOut(){
         <td>Cell</td>
         <td>Cell</td>
         <td>Cell</td>
-        <td><button>Edit </button></td>
-        <td><button>Delete </button></td>
+        <td><button> Edit </button></td>
+        <td><button> Delete </button></td>
       </tr>
     </tbody>
   </table>
+  <button type="button" className="btn btn-danger">Add</button>
 
 </div>
     );
