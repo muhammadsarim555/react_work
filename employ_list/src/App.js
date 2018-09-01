@@ -13,6 +13,32 @@ class App extends Component {
       email : "",
       password  : "",
       currentUser  : null,
+
+      employ_list:[{
+        firstName:'Shariq',
+        lastName:'Ahmed',
+        objEmail:'shariq@gmail.com',
+        date:'24/8/15',
+        salary:'25000'
+      },
+      {
+        firstName:'Muhammad',
+        lastName:'Ali',
+        objEmail:'ali@gmail.com',
+        date:'14/3/18',
+        salary:'30000'
+      },
+      {
+        firstName:'Abdul',
+        lastName:'Rafay',
+        objEmail:'rafay@gmail.com',
+        date:'4/5/17',
+        salary:'20000'
+      }
+    ],
+      
+
+
       firstName : "",
       lastName : "",
       objEmail : "",
@@ -76,16 +102,18 @@ class App extends Component {
       <p><input type="submit" value="Log in" onClick={this.renderAuth.bind(this)} /></p>
   </div>
   );
+  console.log(this.state.currentUser)
   }
 
 logOut(){
     this.setState({
-      currentUser : false,
+      currentUser : null,
     })
     console.log(this.state.currentUser)
   }
   
   renderForm(){
+    
     return(
       <div>
         <input placeholder="f-name" />
@@ -95,62 +123,28 @@ logOut(){
         <input placeholder="date" />
 
       <button type="button" className="btn btn-danger add" >Add</button>
-        
-    <div className="table-responsive">
 
-  <table className="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Salary</th>
-        <th scope="col">Date</th>
-        <th scope="col">Edit</th>
-        <th scope="col">Delete</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Rohail</td>
-        <td>Zafar</td>
-        <td>rohail@gmail.com</td>
-        <td>40000</td>
-        <td>1/20/2018</td>
-        <td><button className="btn btn-default"> Edit </button></td>
-        <td><button className="btn btn-default"> Delete </button></td>
-        
-        
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Farrukh</td>
-        <td>Rasheed</td>
-        <td>farrukh@gmail.com</td>
-        <td>100000</td>
-        <td>2/4/2017</td>
-        <td><button className="btn btn-default">Edit </button></td>
-        <td><button className="btn btn-default">Delete </button></td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Ahmed</td>
-        <td>Khan</td>
-        <td>ahmed@gmail.com</td>
-        <td>110000</td>
-        <td>23/8/2017</td>
-        <td><button className="btn btn-default"> Edit </button></td>
-        <td><button className="btn btn-default"> Delete </button></td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>
-</div>
+      </div>
     );
+  }
+
+  renderObject(){
+    const {employ_list , currentUser} = this.state;
+    const result = currentUser == true;
+    return employ_list.map((v,i)=>{
+      return <tr>
+              <td>{i+1}</td>
+              <td>{v.firstName}</td>
+              <td>{v.lastName}</td>
+              <td>{v.objEmail}</td>
+              <td>{v.salary}</td>
+              <td>{v.date}</td>
+              
+                  <td><button  className="btn btn-outline-info"  data-toggle="modal" data-target="#updateDataModal"><i className="fa fa-pencil-square-o"></i></button></td>
+                  <td><button  className="btn btn-outline-danger"><i className="fa fa-trash-o"></i></button></td>
+              
+            </tr>;
+    })
   }
 
   render() {
@@ -162,6 +156,9 @@ logOut(){
       {!currentUser && this.renderLogin()}    
       {result && <button className="btn btn-default" onClick={this.logOut.bind(this)} >Logout </button>}
       {result && this.renderForm() }
+      {result && this.renderObject()}
+
+      
       
 
     
