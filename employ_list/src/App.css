@@ -109,3 +109,20 @@ body {
   margin-left: 5%;
   display: inline;
 }
+#email{
+  display: inline;
+  margin-top: 3%;
+  width: 20%;
+}
+#salary{
+  margin-left: 5%;
+  display: inline;
+  margin-top: 3%;
+  width: 15%;
+}
+#date{
+  margin-left: 5%;
+  display: inline;
+  margin-top: 3%;
+  width: 15%;
+}

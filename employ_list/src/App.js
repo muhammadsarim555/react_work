@@ -123,10 +123,11 @@ logOut(){
         <input type="text" placeholder="first name" id="firstName" class="form-control"/>
         <input placeholder="last name" id="lastName" class="form-control" />
         <br/>
-        <input placeholder="email" />
-        <input placeholder="salary" />
-        <input placeholder="date" />
+        <input placeholder="email" id="email" className="form-control"/>
+        <input placeholder="salary" id="salary" className="form-control" />
+        <input placeholder="date" id="date" className="form-control" />
 
+        <br/>
       <button type="button" className="btn btn-danger add" >Add</button>
 
       </div>
