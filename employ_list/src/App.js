@@ -90,8 +90,8 @@ class App extends Component {
     const result = currentUser === true;
     return (
       <div className="App">
+      {!currentUser && this.renderLogin(console.log(currentUser))}    
       {result && <button className="btn btn-default" onClick={this.logOut.bind(this)} >Logout </button> }
-       
       
       
       </div>
