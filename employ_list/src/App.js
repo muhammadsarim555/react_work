@@ -115,6 +115,10 @@ logOut(){
     
     return(
       <div className="form-content">
+        <nav className="navbar navbar-dark primary-color">
+    <a className="navbar-brand" href="#">Link</a>
+</nav>
+
         {/* <input placeholder="f-name" /> */}
         <input type="text" placeholder="first name" id="firstName" class="form-control"/>
         <input placeholder="last name" id="lastName" class="form-control" />
