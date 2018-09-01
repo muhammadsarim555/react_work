@@ -92,9 +92,12 @@ body {
 }
 
 .add{
-  border-radius: 150px;
+  float: center;
+  
 }
-
+.btn-logout{
+  float: left;
+}
 
 .form-content{
   text-align: center;

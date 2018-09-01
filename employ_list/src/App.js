@@ -116,7 +116,8 @@ logOut(){
     return(
       <div className="form-content">
         <nav className="navbar navbar-dark primary-color">
-    <a className="navbar-brand" href="#">Link</a>
+    <a className="navbar-brand" href="https://github.com/muhammadsarim555" target="_blank">Muhammad Sarim</a>
+    <button className="btn btn-default btn-logout" onClick={this.logOut.bind(this)} >Logout </button>
 </nav>
 
         {/* <input placeholder="f-name" /> */}
@@ -127,9 +128,9 @@ logOut(){
         <input placeholder="salary" id="salary" className="form-control" />
         <input placeholder="date" id="date" className="form-control" />
 
-        <br/>
-      <button type="button" className="btn btn-danger add" >Add</button>
-
+        <br/><br/><br/>
+      <button type="button" className="btn btn-danger add " >Add</button>
+      <hr/>
       </div>
     );
   }
@@ -162,7 +163,6 @@ logOut(){
   renderApp(){
     return(
       <div>
-    <button className="btn btn-default" onClick={this.logOut.bind(this)} >Logout </button>
     {/* <div className="table-responsive"> */}
     <table className="table table-striped table-dark text-center ">
       <thead>
