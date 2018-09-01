@@ -78,20 +78,87 @@ class App extends Component {
   );
   }
 
-  logOut(){
+logOut(){
     this.setState({
       currentUser : false,
     })
     console.log(this.state.currentUser)
   }
 
+  renderForm(){
+    return(
+    <div className="table-responsive">
+
+  <table className="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Heading</th>
+        <th scope="col">Heading</th>
+        <th scope="col">Heading</th>
+        <th scope="col">Heading</th>
+        <th scope="col">Heading</th>
+        <th scope="col">Heading</th>
+        <th scope="col">Heading</th>
+        <th scope="col">Heading</th>
+        <th scope="col">Heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+    );
+  }
+
   render() {
     const {currentUser } = this.state;
-    const result = currentUser === true;
+    const result = currentUser == true;
     return (
       <div className="App">
+
       {!currentUser && this.renderLogin(console.log(currentUser))}    
-      {result && <button className="btn btn-default" onClick={this.logOut.bind(this)} >Logout </button> }
+      {result && this.renderForm() }
+      {/* // <button className="btn btn-default" onClick={this.logOut.bind(this)} >Logout </button>} */}
+
+    
       
       
       </div>
