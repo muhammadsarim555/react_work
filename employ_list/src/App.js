@@ -106,39 +106,39 @@ logOut(){
     <tbody>
       <tr>
         <th scope="row">1</th>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td><button> Edit </button></td>
-        <td><button> Delete </button></td>
+        <td>Rohail</td>
+        <td>Zafar</td>
+        <td>rohail@gmail.com</td>
+        <td>40000</td>
+        <td>1/20/2018</td>
+        <td><button className="btn btn-default"> Edit </button></td>
+        <td><button className="btn btn-default"> Delete </button></td>
         
         
       </tr>
       <tr>
         <th scope="row">2</th>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td><button>Edit </button></td>
-        <td><button>Delete </button></td>
+        <td>Farrukh</td>
+        <td>Rasheed</td>
+        <td>farrukh@gmail.com</td>
+        <td>100000</td>
+        <td>2/4/2017</td>
+        <td><button className="btn btn-default">Edit </button></td>
+        <td><button className="btn btn-default">Delete </button></td>
       </tr>
       <tr>
         <th scope="row">3</th>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td><button> Edit </button></td>
-        <td><button> Delete </button></td>
+        <td>Ahmed</td>
+        <td>Khan</td>
+        <td>ahmed@gmail.com</td>
+        <td>110000</td>
+        <td>23/8/2017</td>
+        <td><button className="btn btn-default"> Edit </button></td>
+        <td><button className="btn btn-default"> Delete </button></td>
       </tr>
     </tbody>
   </table>
-  <button type="button" className="btn btn-danger">Add</button>
+  <button type="button" className="btn btn-danger add">Add</button>
 
 </div>
     );
@@ -151,8 +151,9 @@ logOut(){
       <div className="App">
 
       {!currentUser && this.renderLogin()}    
+      {result && <button className="btn btn-default" onClick={this.logOut.bind(this)} >Logout </button>}
       {result && this.renderForm() }
-      {/* // <button className="btn btn-default" onClick={this.logOut.bind(this)} >Logout </button>} */}
+      
 
     
       
