@@ -132,8 +132,11 @@ logOut(){
     const {employ_list , currentUser} = this.state;
     const result = currentUser == true;
     return employ_list.map((v,i)=>{
-      return <tr>
-              <td>{i+1}</td>
+      return 
+      <table class="table">
+      <thead>
+      <tr>
+              <th  scope="row">{i+1}</th>
               <td>{v.firstName}</td>
               <td>{v.lastName}</td>
               <td>{v.objEmail}</td>
@@ -143,7 +146,9 @@ logOut(){
                   <td><button  className="btn btn-outline-info"  data-toggle="modal" data-target="#updateDataModal"><i className="fa fa-pencil-square-o"></i></button></td>
                   <td><button  className="btn btn-outline-danger"><i className="fa fa-trash-o"></i></button></td>
               
-            </tr>;
+            </tr>
+            </thead>
+            </table>
     })
   }
 
