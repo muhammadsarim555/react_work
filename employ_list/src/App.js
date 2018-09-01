@@ -114,9 +114,11 @@ logOut(){
   renderForm(){
     
     return(
-      <div>
-        <input placeholder="f-name" />
-        <input placeholder="l-name" />
+      <div className="form-content">
+        {/* <input placeholder="f-name" /> */}
+        <input type="text" placeholder="first name" id="firstName" class="form-control"/>
+        <input placeholder="last name" id="lastName" class="form-control" />
+        <br/>
         <input placeholder="email" />
         <input placeholder="salary" />
         <input placeholder="date" />

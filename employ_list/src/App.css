@@ -94,3 +94,18 @@ body {
 .add{
   border-radius: 150px;
 }
+
+
+.form-content{
+  text-align: center;
+}
+#firstName{
+  width: 30%;
+  margin-left: 5%;
+  display: inline;
+}
+#lastName{
+  width: 30%;
+  margin-left: 5%;
+  display: inline;
+}
