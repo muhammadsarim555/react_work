@@ -84,9 +84,18 @@ logOut(){
     })
     console.log(this.state.currentUser)
   }
-
+  
   renderForm(){
     return(
+      <div>
+        <input placeholder="f-name" />
+        <input placeholder="l-name" />
+        <input placeholder="email" />
+        <input placeholder="salary" />
+        <input placeholder="date" />
+
+      <button type="button" className="btn btn-danger add" >Add</button>
+        
     <div className="table-responsive">
 
   <table className="table">
@@ -138,8 +147,8 @@ logOut(){
       </tr>
     </tbody>
   </table>
-  <button type="button" className="btn btn-danger add">Add</button>
 
+</div>
 </div>
     );
   }
