@@ -157,7 +157,7 @@ logOut(){
       <div>
     <button className="btn btn-default" onClick={this.logOut.bind(this)} >Logout </button>
     {/* <div className="table-responsive"> */}
-    <table className="table table-striped table-dark text-center table-responsive">
+    <table className="table table-striped table-dark text-center ">
       <thead>
         <tr>
           <th scope="col">#</th>
