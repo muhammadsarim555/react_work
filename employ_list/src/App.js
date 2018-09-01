@@ -66,6 +66,18 @@ class App extends Component {
     }
   }
 
+  renderLogin(){
+    return( <div className="login">
+    <div className="login-triangle"></div> 
+    
+    <h2 className="login-header">Log in</h2>
+      <p><input type="email" placeholder="Email" value={this.state.email} onChange={(e) => this.renderLoginEmail(e.target.value)} required /></p>
+      <p><input type="password" placeholder="Password" value={this.state.password} onChange={(e) => this.renderLoginPassword(e.target.value)} required /></p>
+      <p><input type="submit" value="Log in" onClick={this.renderAuth.bind(this)} /></p>
+  </div>
+  );
+  }
+
   logOut(){
     this.setState({
       currentUser : false,
@@ -79,14 +91,7 @@ class App extends Component {
     return (
       <div className="App">
       {result && <button className="btn btn-default" onClick={this.logOut.bind(this)} >Logout </button> }
-        <div className="login">
-  <div className="login-triangle"></div> 
-  
-  <h2 className="login-header">Log in</h2>
-    <p><input type="email" placeholder="Email" value={this.state.email} onChange={(e) => this.renderLoginEmail(e.target.value)} required /></p>
-    <p><input type="password" placeholder="Password" value={this.state.password} onChange={(e) => this.renderLoginPassword(e.target.value)} required /></p>
-    <p><input type="submit" value="Log in" onClick={this.renderAuth.bind(this)} /></p>
-</div>
+       
       
       
       </div>
