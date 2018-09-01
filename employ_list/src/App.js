@@ -69,10 +69,10 @@ class App extends Component {
   renderAuth(){
       const { email , password } = this.state;
       if(email == "admin" && password == "admin") {  
-        // this.setState({currentUser : true,}) , console.log(this.state.currentUser)
+        this.setState({currentUser : true,}) , console.log(this.state.currentUser)
         swal("Good job!", "You clicked the button!", "success")
         this.setState({
-          currentUser : true,
+          // currentUser : true,
           email : "",
           password : "",
           
@@ -164,7 +164,7 @@ logOut(){
     return(
       <div>
     {/* <div className="table-responsive"> */}
-    <table className="table table-striped table-dark text-center ">
+    <table className="table table-striped table-info text-center ">
       <thead>
         <tr>
           <th scope="col">#</th>
