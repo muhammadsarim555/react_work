@@ -43,7 +43,7 @@ class App extends Component {
 
   renderAuth(){
       const { email , password } = this.state;
-      if(email == "admin@domain.com" && password == "admin") {  
+      if(email == "admin" && password == "admin") {  
         // this.setState({currentUser : true,}) , console.log(this.state.currentUser)
         swal("Good job!", "You clicked the button!", "success")
         this.setState({
@@ -98,10 +98,9 @@ logOut(){
         <th scope="col">Email</th>
         <th scope="col">Salary</th>
         <th scope="col">Date</th>
-        <th scope="col">Heading</th>
-        <th scope="col">Heading</th>
-        <th scope="col">Heading</th>
-        <th scope="col">Heading</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -112,10 +111,10 @@ logOut(){
         <td>Cell</td>
         <td>Cell</td>
         <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
+        <td><button>Edit </button></td>
+        <td><button>Delete </button></td>
+        
+        
       </tr>
       <tr>
         <th scope="row">2</th>
@@ -124,10 +123,8 @@ logOut(){
         <td>Cell</td>
         <td>Cell</td>
         <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
+        <td><button>Edit </button></td>
+        <td><button>Delete </button></td>
       </tr>
       <tr>
         <th scope="row">3</th>
@@ -136,10 +133,8 @@ logOut(){
         <td>Cell</td>
         <td>Cell</td>
         <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
+        <td><button>Edit </button></td>
+        <td><button>Delete </button></td>
       </tr>
     </tbody>
   </table>
@@ -154,7 +149,7 @@ logOut(){
     return (
       <div className="App">
 
-      {!currentUser && this.renderLogin(console.log(currentUser))}    
+      {!currentUser && this.renderLogin()}    
       {result && this.renderForm() }
       {/* // <button className="btn btn-default" onClick={this.logOut.bind(this)} >Logout </button>} */}
 
