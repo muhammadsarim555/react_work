@@ -1,3 +1,5 @@
+<!-- A collection of concise write-ups on small things I was working and learning abour React and i was creating a project on react you can see that project here this is sort of ToDo App on React as i said, i was learning so i knew about   -->
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
