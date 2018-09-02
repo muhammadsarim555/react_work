@@ -152,11 +152,17 @@ addForm(){
   employ_list.push({
     firstName,
     lastName ,
+    objEmail,
+    salary,
+    date,
   })
   console.log(firstName)
   this.setState({
     firstName : "",
     lastName : "",
+    objEmail : "",
+    salary : "",
+    date : "",
   })
 }
 
