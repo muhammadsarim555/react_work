@@ -109,6 +109,7 @@ class App extends Component {
         </nav>
 
         {/* <input placeholder="f-name" /> */}
+        {/* <label htmlFor="firstName" className="">First Name: </label>  */}
         <input type="text" placeholder="first name" id="firstName" value={this.state.firstName} onChange={(e) => this.setState({ firstName: e.target.value })} className="form-control" />
         <input type="text" placeholder="last name" id="lastName" class="form-control" value={this.state.lastName} onChange={(e) => this.setState({ lastName: e.target.value })} />
         <br />
