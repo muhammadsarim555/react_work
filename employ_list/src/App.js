@@ -20,20 +20,7 @@ class App extends Component {
         date:'24/8/15',
         salary:'25000'
       },
-      {
-        firstName:'Muhammad',
-        lastName:'Ali',
-        objEmail:'ali@gmail.com',
-        date:'14/3/18',
-        salary:'30000'
-      },
-      {
-        firstName:'Abdul',
-        lastName:'Rafay',
-        objEmail:'rafay@gmail.com',
-        date:'4/5/17',
-        salary:'20000'
-      }
+    
     ],
       
 
