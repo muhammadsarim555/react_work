@@ -108,15 +108,15 @@ logOut(){
 </nav>
 
         {/* <input placeholder="f-name" /> */}
-        <input type="text" placeholder="first name" id="firstName" class="form-control"/>
-        <input placeholder="last name" id="lastName" class="form-control" />
+        <input type="text" placeholder="first name" id="firstName" value={this.state.firstName} onChange={(e) => this.setState({firstName : e.target.value})} class="form-control"/>
+        <input placeholder="last name" id="lastName" class="form-control" value={this.state.firstName} onChange={(e) => this.setState({lastName : e.target.value})}  />
         <br/>
-        <input placeholder="email" id="email" className="form-control"/>
-        <input placeholder="salary" id="salary" className="form-control" />
+        <input placeholder="email" id="email" className="form-control" value={this.state.objEmail} onChange={(e) => this.setState({objEmail : e.target.value})}e/>
+        <input placeholder="salary" id="salary" className="form-control" value={this.state.salary} onChange={(e) => this.setState({salary : e.target.value})} />
         <input placeholder="date" id="date" className="form-control" />
 
         <br/><br/><br/>
-      <button type="button" className="btn btn-danger add " >Add</button>
+      <button type="button" className="btn btn-danger add " onClick={this.addForm.bind(this)}>Add</button>
       <hr/>
       </div>
     );
@@ -128,7 +128,6 @@ logOut(){
     return(
     <tbody> 
     {employ_list.map((v,i)=>{
-      console.log(v)
        return  <tr>
               <td  >{i+1}</td>
               <td>{v.firstName}</td>
@@ -148,7 +147,20 @@ logOut(){
     )
 }
 
-  renderApp(){
+addForm(){
+  const  {employ_list , firstName , lastName ,  } = this.state;
+  employ_list.push({
+    firstName,
+    lastName ,
+  })
+  console.log(firstName)
+  this.setState({
+    firstName : "",
+    lastName : "",
+  })
+}
+
+renderApp(){
     return(
       <div>
     {/* <div className="table-responsive"> */}
