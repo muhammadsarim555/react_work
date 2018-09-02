@@ -122,7 +122,7 @@ class App extends Component {
         {currentIndex == null ? <button type="button" className="btn btn-info add " onClick={this.renderAddForm.bind(this, index)}>Add</button>
           :
           <div>
-            <button type="button" className="btn btn-info add " onClick={this.renderUpdateData.bind(this, index)}>Update</button>
+            <button type="button" className="btn btn-info add " onClick={this.renderUpdateData.bind(this, currentIndex)}>Update</button>
             <button type="button" className="btn btn-info add " onClick={this.renderCancel.bind(this)}>Cancel</button>
           </div>}
 
@@ -180,7 +180,7 @@ class App extends Component {
   renderEdit(index) {
     const { employ_list, currentIndex } = this.state;
 
-    this.setState({
+    let work =  this.setState({
       currentIndex: index,
       firstName: employ_list[index].firstName,
       lastName: employ_list[index].lastName,
@@ -194,13 +194,18 @@ class App extends Component {
 
   renderUpdateData(index) {
     const { employ_list, firstName, lastName, objEmail, salary, date } = this.state;
-    const r = this.state.employ_list;
+    // const r = this.state.employ_list;
     // console.log(firstName);
-    this.setState({
-      // r : firstName,
-      // r : 
-    })
-    console.log(r[index]);
+    
+    // this.setState({
+      employ_list[index].firstName,
+      // lastName,
+      // objEmail,
+      // salary,
+      // date,
+    // })
+    console.log(index);
+    console.log( employ_list[index].firstName = firstName , "???");
 
   }
 
@@ -216,7 +221,7 @@ class App extends Component {
     })
   }
 
-  
+
   renderDelete(index) {
     const { employ_list } = this.state;
     employ_list.splice(index, 1);
