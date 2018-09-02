@@ -109,11 +109,11 @@ logOut(){
 
         {/* <input placeholder="f-name" /> */}
         <input type="text" placeholder="first name" id="firstName" value={this.state.firstName} onChange={(e) => this.setState({firstName : e.target.value})} class="form-control"/>
-        <input placeholder="last name" id="lastName" class="form-control" value={this.state.firstName} onChange={(e) => this.setState({lastName : e.target.value})}  />
+        <input placeholder="last name" id="lastName" class="form-control" value={this.state.lastName} onChange={(e) => this.setState({lastName : e.target.value})}  />
         <br/>
         <input placeholder="email" id="email" className="form-control" value={this.state.objEmail} onChange={(e) => this.setState({objEmail : e.target.value})}e/>
         <input placeholder="salary" id="salary" className="form-control" value={this.state.salary} onChange={(e) => this.setState({salary : e.target.value})} />
-        <input placeholder="date" id="date" className="form-control" />
+        <input placeholder="date" id="date" className="form-control" value={this.state.date} onChange={(e) => this.setState({date : e.target.value})} />
 
         <br/><br/><br/>
       <button type="button" className="btn btn-danger add " onClick={this.addForm.bind(this)}>Add</button>
@@ -148,7 +148,7 @@ logOut(){
 }
 
 addForm(){
-  const  {employ_list , firstName , lastName ,  } = this.state;
+  const  {employ_list , firstName , lastName , objEmail , salary , date } = this.state;
   employ_list.push({
     firstName,
     lastName ,
