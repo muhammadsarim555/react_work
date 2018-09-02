@@ -11,13 +11,14 @@ class App extends Component {
     this.state = {
       email: "",
       password: "",
-      currentUser: null,
+      currentUser: false,
+      currentIndex: null, 
 
       employ_list: [{
         firstName: 'Muhammad',
         lastName: 'Sarim',
         objEmail: 'muhammadsarim555@gmail.com',
-        date: '3/5/18',
+        date: '2016-04-29',
         salary: '250000'
       },
 
@@ -99,7 +100,7 @@ class App extends Component {
   }
 
   renderForm() {
-
+    const {currentIndex} = this.state;
     return (
       <div className="form-content">
         <nav className="navbar navbar-dark primary-color">
@@ -116,7 +117,11 @@ class App extends Component {
         <input type="date" placeholder="date" id="date" className="form-control" value={this.state.date} onChange={(e) => this.setState({ date: e.target.value })} />
 
         <br /><br /><br />
-        <button type="button" className="btn btn-info add " onClick={this.addForm.bind(this)}>Add</button>
+        { currentIndex && <p>You are editing item # {currentIndex} </p>}
+        
+         { currentIndex == null ? <button type="button" className="btn btn-info add " onClick={this.renderAddForm.bind(this)}>Add</button> 
+         :
+           <button type="button" className="btn btn-info add " >Update</button> }
         <hr />
       </div>
     );
@@ -125,8 +130,10 @@ class App extends Component {
   renderObject() {
     const { employ_list, currentUser } = this.state;
     const result = currentUser === true;
+
     return (
       <tbody>
+        
         {employ_list.map((v, i) => {
           return <tr>
             <td  >{i + 1}</td>
@@ -147,7 +154,7 @@ class App extends Component {
     )
   }
 
-  addForm() {
+  renderAddForm() {
     const { employ_list, firstName, lastName, objEmail, salary, date } = this.state;
     employ_list.push({
       firstName,
@@ -167,16 +174,18 @@ class App extends Component {
   }
 
   renderEdit(index) {
-    const { employ_list } = this.state;
+    const { employ_list , currentIndex } = this.state;
 
     this.setState({
-      // currentIndex: index,
+      currentIndex: index,
       firstName: employ_list[index].firstName,
       lastName: employ_list[index].lastName,
       objEmail: employ_list[index].objEmail,
       salary: employ_list[index].salary,
       date: employ_list[index].date,
     });
+
+    console.log(currentIndex , "currentindex")
   }
 
   renderApp() {
