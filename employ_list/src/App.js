@@ -136,7 +136,7 @@ class App extends Component {
             <td>{v.salary}</td>
             <td>{v.date}</td>
 
-            <td><button className="btn btn-outline-info" data-toggle="modal" data-target="#updateDataModal"><i className="fa fa-pencil-square-o"></i></button></td>
+            <td><button className="btn btn-outline-info" data-toggle="modal" data-target="#updateDataModal" onClick={this.renderEdit.bind(this , i)} ><i className="fa fa-pencil-square-o"></i></button></td>
             <td><button className="btn btn-outline-danger"><i className="fa fa-trash-o"></i></button></td>
 
           </tr>
@@ -164,6 +164,19 @@ class App extends Component {
       salary: "",
       date: "",
     })
+  }
+
+  renderEdit(index) {
+    const { employ_list } = this.state;
+
+    this.setState({
+      // currentIndex: index,
+      firstName: employ_list[index].firstName,
+      lastName: employ_list[index].employ_list,
+      objEmail: employ_list[index].objEmail,
+      salary: employ_list[index].salary,
+      date: employ_list[index].date,
+    });
   }
 
   renderApp() {
