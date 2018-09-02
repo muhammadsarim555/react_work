@@ -56,7 +56,7 @@ class App extends Component {
 
   renderAuth() {
     const { email, password } = this.state;
-    if (email == "admin" && password == "admin") {
+    if (email == "admin@domain.com" && password == "admin") {
       this.setState({ currentUser: true, }), console.log(this.state.currentUser)
       swal("Good job!", "You clicked the button!", "success")
       this.setState({
@@ -147,8 +147,8 @@ class App extends Component {
             <td>{v.salary}</td>
             <td>{v.date}</td>
 
-            <td><button className="btn btn-outline-info" data-toggle="modal" data-target="#updateDataModal" onClick={this.renderEdit.bind(this, i)} ><i className="fa fa-pencil-square-o"></i></button></td>
-            <td><button className="btn btn-outline-danger" onClick={this.renderDelete.bind(this, i)}><i className="fa fa-trash-o"></i></button></td>
+            <td><button className="btn btn-info add" data-toggle="modal" data-target="#updateDataModal" onClick={this.renderEdit.bind(this, i)} >Edit</button></td>
+            <td><button className="btn btn-danger" onClick={this.renderDelete.bind(this, i)}>Delete</button></td>
 
           </tr>
 
@@ -193,19 +193,25 @@ class App extends Component {
   }
 
   renderUpdateData(index) {
-    const { employ_list, firstName, lastName, objEmail, salary, date } = this.state;
-    // const r = this.state.employ_list;
-    // console.log(firstName);
-    
-    // this.setState({
-      employ_list[index].firstName,
-      // lastName,
-      // objEmail,
-      // salary,
-      // date,
-    // })
+    const { employ_list, firstName, lastName, objEmail, salary, date , currentIndex } = this.state;
+    let updateObject = {
+      firstName: firstName,
+      lastName: lastName ,
+      objEmail : objEmail,
+      salary : salary,
+      date : date,
+    }
+    employ_list[currentIndex] = updateObject;
+    this.setState({
+      firstName: "",
+      lastName: "",
+      objEmail: "",
+      salary: "",
+      date: "",
+      currentIndex: null,
+    });
     console.log(index);
-    console.log( employ_list[index].firstName = firstName , "???");
+    // console.log( employ_list[index].firstName = lastName , "???");
 
   }
 

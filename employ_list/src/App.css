@@ -93,6 +93,7 @@ body {
 
 .add{
   float: center;
+  background-color: rgb(66, 133, 244) !important;
   
 }
 .btn-logout{
