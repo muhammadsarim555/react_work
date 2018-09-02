@@ -117,7 +117,7 @@ class App extends Component {
         <input type="date" placeholder="date" id="date" className="form-control" value={this.state.date} onChange={(e) => this.setState({ date: e.target.value })} />
 
         <br /><br /><br />
-        { currentIndex && <p>You are editing item # {currentIndex} </p>}
+        { currentIndex && <p>You are editing item # {currentIndex + 1} </p>}
         
          { currentIndex == null ? <button type="button" className="btn btn-info add " onClick={this.renderAddForm.bind(this)}>Add</button> 
          :
