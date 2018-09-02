@@ -97,6 +97,8 @@ body {
 }
 .btn-logout{
   float: left;
+  background-color: red !important;
+  cursor: pointer;
 }
 
 .form-content{

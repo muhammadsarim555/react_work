@@ -116,7 +116,7 @@ logOut(){
         <input placeholder="date" id="date" className="form-control" value={this.state.date} onChange={(e) => this.setState({date : e.target.value})} />
 
         <br/><br/><br/>
-      <button type="button" className="btn btn-danger add " onClick={this.addForm.bind(this)}>Add</button>
+      <button type="button" className="btn btn-info add " onClick={this.addForm.bind(this)}>Add</button>
       <hr/>
       </div>
     );
