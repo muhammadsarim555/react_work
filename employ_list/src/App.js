@@ -12,7 +12,7 @@ class App extends Component {
       email: "",
       password: "",
       currentUser: false,
-      currentIndex: null, 
+      currentIndex: null,
 
       employ_list: [{
         firstName: 'Muhammad',
@@ -100,7 +100,7 @@ class App extends Component {
   }
 
   renderForm(index) {
-    const {currentIndex} = this.state;
+    const { currentIndex } = this.state;
     return (
       <div className="form-content">
         <nav className="navbar navbar-dark primary-color">
@@ -109,7 +109,7 @@ class App extends Component {
         </nav>
 
         {/* <input placeholder="f-name" /> */}
-        <input type="text" placeholder="first name" id="firstName" value={this.state.firstName} onChange={(e) => this.setState({ firstName: e.target.value })} class="form-control" />
+        <input type="text" placeholder="first name" id="firstName" value={this.state.firstName} onChange={(e) => this.setState({ firstName: e.target.value })} className="form-control" />
         <input type="text" placeholder="last name" id="lastName" class="form-control" value={this.state.lastName} onChange={(e) => this.setState({ lastName: e.target.value })} />
         <br />
         <input type="email" placeholder="email" id="email" className="form-control" value={this.state.objEmail} onChange={(e) => this.setState({ objEmail: e.target.value })} e />
@@ -117,15 +117,15 @@ class App extends Component {
         <input type="date" placeholder="date" id="date" className="form-control" value={this.state.date} onChange={(e) => this.setState({ date: e.target.value })} />
 
         <br /><br /><br />
-        { currentIndex != null && <p>You are editing item # {currentIndex +1 } </p>}
-        
-         { currentIndex == null ? <button type="button" className="btn btn-info add " onClick={this.renderAddForm.bind(this , index)}>Add</button> 
-         :
-         <div>
-           <button type="button" className="btn btn-info add " onClick={this.renderUpdateData.bind(this , index)}>Update</button> 
-            <button type="button" className="btn btn-info add " onClick={this.renderCancel.bind(this)}>Cancel</button> 
-            </div>} 
-          
+        {currentIndex != null && <p>You are editing item # {currentIndex + 1} </p>}
+
+        {currentIndex == null ? <button type="button" className="btn btn-info add " onClick={this.renderAddForm.bind(this, index)}>Add</button>
+          :
+          <div>
+            <button type="button" className="btn btn-info add " onClick={this.renderUpdateData.bind(this, index)}>Update</button>
+            <button type="button" className="btn btn-info add " onClick={this.renderCancel.bind(this)}>Cancel</button>
+          </div>}
+
         <hr />
       </div>
     );
@@ -137,7 +137,7 @@ class App extends Component {
 
     return (
       <tbody>
-        
+
         {employ_list.map((v, i) => {
           return <tr>
             <td  >{i + 1}</td>
@@ -147,8 +147,8 @@ class App extends Component {
             <td>{v.salary}</td>
             <td>{v.date}</td>
 
-            <td><button className="btn btn-outline-info" data-toggle="modal" data-target="#updateDataModal" onClick={this.renderEdit.bind(this , i)} ><i className="fa fa-pencil-square-o"></i></button></td>
-            <td><button className="btn btn-outline-danger" onClick={this.renderDelete.bind(this , i)}><i className="fa fa-trash-o"></i></button></td>
+            <td><button className="btn btn-outline-info" data-toggle="modal" data-target="#updateDataModal" onClick={this.renderEdit.bind(this, i)} ><i className="fa fa-pencil-square-o"></i></button></td>
+            <td><button className="btn btn-outline-danger" onClick={this.renderDelete.bind(this, i)}><i className="fa fa-trash-o"></i></button></td>
 
           </tr>
 
@@ -178,8 +178,8 @@ class App extends Component {
   }
 
   renderEdit(index) {
-    const { employ_list , currentIndex } = this.state;
-    
+    const { employ_list, currentIndex } = this.state;
+
     this.setState({
       currentIndex: index,
       firstName: employ_list[index].firstName,
@@ -192,8 +192,8 @@ class App extends Component {
 
   }
 
-  renderUpdateData(index){
-    const {employ_list ,  firstName , lastName , objEmail , salary ,date} = this.state;
+  renderUpdateData(index) {
+    const { employ_list, firstName, lastName, objEmail, salary, date } = this.state;
     const r = this.state.employ_list;
     // console.log(firstName);
     this.setState({
@@ -202,25 +202,29 @@ class App extends Component {
     })
     console.log(r[index]);
 
-}
+  }
 
-renderCancel(){
-  const {currentIndex , firstName , lastName , objEmail , salary, date} =  this.state;
-  this.setState({
-    currentIndex : null,
-    firstName : "",
-    lastName : "",
-    objEmail: "",
-    salary : "",
-    date :"",
-  })
-}
-renderDelete(index){
-  const {employ_list} = this.state;
-  employ_list.splice(index, 1);
+  renderCancel() {
+    const { currentIndex, firstName, lastName, objEmail, salary, date } = this.state;
+    this.setState({
+      currentIndex: null,
+      firstName: "",
+      lastName: "",
+      objEmail: "",
+      salary: "",
+      date: "",
+    })
+  }
 
-  this.setState({employ_list, currentIndex: null});
-}
+  
+  renderDelete(index) {
+    const { employ_list } = this.state;
+    employ_list.splice(index, 1);
+
+    this.setState({ employ_list, currentIndex: null });
+  }
+
+
   renderApp() {
     return (
       <div>
