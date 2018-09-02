@@ -128,6 +128,7 @@ logOut(){
     return(
     <tbody> 
     {employ_list.map((v,i)=>{
+      console.log(v)
        return  <tr>
               <td  >{i+1}</td>
               <td>{v.firstName}</td>
