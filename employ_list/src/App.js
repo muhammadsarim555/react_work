@@ -14,11 +14,11 @@ class App extends Component {
       currentUser: null,
 
       employ_list: [{
-        firstName: 'Shariq',
-        lastName: 'Ahmed',
-        objEmail: 'shariq@gmail.com',
-        date: '24/8/15',
-        salary: '25000'
+        firstName: 'Muhammad',
+        lastName: 'Sarim',
+        objEmail: 'muhammadsarim555@gmail.com',
+        date: '3/5/18',
+        salary: '250000'
       },
 
       ],
@@ -172,7 +172,7 @@ class App extends Component {
     this.setState({
       // currentIndex: index,
       firstName: employ_list[index].firstName,
-      lastName: employ_list[index].employ_list,
+      lastName: employ_list[index].lastName,
       objEmail: employ_list[index].objEmail,
       salary: employ_list[index].salary,
       date: employ_list[index].date,
