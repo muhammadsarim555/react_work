@@ -148,7 +148,7 @@ class App extends Component {
             <td>{v.date}</td>
 
             <td><button className="btn btn-outline-info" data-toggle="modal" data-target="#updateDataModal" onClick={this.renderEdit.bind(this , i)} ><i className="fa fa-pencil-square-o"></i></button></td>
-            <td><button className="btn btn-outline-danger"><i className="fa fa-trash-o"></i></button></td>
+            <td><button className="btn btn-outline-danger" onClick={this.renderDelete.bind(this , i)}><i className="fa fa-trash-o"></i></button></td>
 
           </tr>
 
@@ -216,7 +216,10 @@ renderCancel(){
   })
 }
 renderDelete(index){
-  // const {}
+  const {employ_list} = this.state;
+  employ_list.splice(index, 1);
+
+  this.setState({employ_list, currentIndex: null});
 }
   renderApp() {
     return (
