@@ -19,7 +19,9 @@ class App extends Component {
   render() {
     return (
       <div className="app"> 
-      <Bulb name={"Sarim" } work={"Web And Mobile Developer"} />
+      <Bulb name={"Sarim" } work={"Web And Mobile Developer"} >
+          <h4>We are as a team </h4>
+         </Bulb>
     </div>
     );
   }

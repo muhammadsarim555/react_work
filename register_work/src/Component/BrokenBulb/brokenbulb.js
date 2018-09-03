@@ -16,10 +16,14 @@ class Bulb extends Component {
     })
   }
   render() {
+    const {name , work} = this.props;
     console.log(this.props)
     return (
       <div className="app"> 
-      <h2>I am Muhammad Sarim WElcome To EasyTech </h2>
+      {/* <h2>I am Muhammad Sarim WElcome To EasyTech </h2> */}
+      <h3> I am Muhammad {name} and I work  {work}  </h3>
+      {this.props.chilen}
+
     </div>
     );
   }
