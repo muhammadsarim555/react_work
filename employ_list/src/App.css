@@ -93,7 +93,7 @@ body {
 
 .add{
   float: center;
-  background-color: rgb(66, 133, 244) !important;
+  background-color: rgba(3, 128, 145, 0.986) !important;
   
 }
 .btn-logout{
@@ -131,4 +131,11 @@ body {
   display: inline;
   margin-top: 3%;
   width: 15%;
+}
+
+table{
+  background-color: #4285f4 !important;
+  color: white !important;
+  font-weight: bolder;
+
 }

@@ -181,7 +181,7 @@ class App extends Component {
   renderEdit(index) {
     const { employ_list, currentIndex } = this.state;
 
-    let work =  this.setState({
+      this.setState({
       currentIndex: index,
       firstName: employ_list[index].firstName,
       lastName: employ_list[index].lastName,
@@ -189,18 +189,18 @@ class App extends Component {
       salary: employ_list[index].salary,
       date: employ_list[index].date,
     });
-    console.log(index);
+    console.log(employ_list[index]);
 
   }
 
   renderUpdateData(index) {
     const { employ_list, firstName, lastName, objEmail, salary, date , currentIndex } = this.state;
     let updateObject = {
-      firstName: firstName,
-      lastName: lastName ,
-      objEmail : objEmail,
-      salary : salary,
-      date : date,
+      firstName,
+      lastName ,
+      objEmail,
+      salary ,
+      date ,
     }
     employ_list[currentIndex] = updateObject;
     this.setState({
@@ -211,7 +211,7 @@ class App extends Component {
       date: "",
       currentIndex: null,
     });
-    console.log(index);
+    console.log(currentIndex);
     // console.log( employ_list[index].firstName = lastName , "???");
 
   }

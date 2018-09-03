@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Bulb from "./Component/BrokenBulb/brokenbulb.js"
-class App extends Component {
+// import './../../App.css';
+
+class Bulb extends Component {
   constructor(){
     super()
     this.state = {
@@ -19,10 +18,10 @@ class App extends Component {
   render() {
     return (
       <div className="app"> 
-      <Bulb/>
+      <h2>I am Muhammad Sarim WElcome To EasyTech </h2>
     </div>
     );
   }
 }
 
-export default App;
+export default Bulb;
