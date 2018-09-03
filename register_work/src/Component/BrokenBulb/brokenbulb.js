@@ -16,6 +16,7 @@ class Bulb extends Component {
     })
   }
   render() {
+    console.log(this.props)
     return (
       <div className="app"> 
       <h2>I am Muhammad Sarim WElcome To EasyTech </h2>

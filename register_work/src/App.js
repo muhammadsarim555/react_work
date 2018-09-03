@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="app"> 
-      <Bulb/>
+      <Bulb name={"Sarim" } work={"Web And Mobile Developer"} />
     </div>
     );
   }
