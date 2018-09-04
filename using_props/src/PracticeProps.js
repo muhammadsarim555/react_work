@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './on.webp';
 import './App.css';
-import Bulb from "./Component/BrokenBulb/brokenbulb.js"
+import Bulb from "./Component/BrokenBulb/LearningProps"
 class App extends Component {
   constructor(){
     super();
@@ -40,7 +40,7 @@ page(){
 
     <br/>
 
-      
+
 
     </div>
     );
