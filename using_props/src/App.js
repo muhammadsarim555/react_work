@@ -34,17 +34,13 @@ page(){
       {cu &&<Bulb forFalse={this.forFalse.bind(this)} />}
     
        {/* <Bind forFalse={this.forFalse.bind(this)} /> */}
-    
-      
-      {!cu && <Bulb work={this.page.bind(this)}  content="Muhammad Sarim" />}
-      
-      
-      
-      
-      {/* {cu && <Bulb forFalse={this.forFalse.bind(this)} />} */}
+    {!cu && <Bulb work={this.page.bind(this)}  content="Muhammad Sarim" />}
+    {/* {cu && <Bulb forFalse={this.forFalse.bind(this)} />} */}
+{/* <button onClick={this.page.bind(this)}>CLick me fir test</button> */}
 
-      {/* <button onClick={this.page.bind(this)}>CLick me fir test</button> */}
+    <br/>
 
+      
 
     </div>
     );
