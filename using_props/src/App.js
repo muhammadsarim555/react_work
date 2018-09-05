@@ -16,7 +16,13 @@ class App extends Component {
     }
 
     header(){
-
+        return(
+            <div>
+                <nav className="navbar-color">
+          <a className="navbar" href="https://github.com/muhammadsarim555" target="_blank">Muhammad Sarim</a>
+          </nav>
+            </div>
+        )
     }
 
     body(){
@@ -45,6 +51,8 @@ class App extends Component {
     render() {
         return (
             <div className="app">
+                {this.header()}
+                <br/>
                 {this.body()}
                 <Break updateState={this.updateState.bind(this)} />
                 <OffBulb updateState={this.updateState.bind(this)}  />
