@@ -3,46 +3,45 @@ import off from "./images/off.jpg";
 import on from "./images/on.jpg";
 import brokenImage from "./images/broken.jpg";
 import './App.css';
-import Break from "./Component/BrokenBulb/Broken"
-import OffBulb from "./Component/OffBulb/OffBulb.js"
-import On from "./Component/OnBulb/OnBulb.js"
+import Break from "./Component/BrokenBulb/Broken";
+import OffBulb from "./Component/OffBulb/OffBulb.js";
+import On from "./Component/OnBulb/OnBulb.js";
 
 class App extends Component {
     constructor() {
         super();
         this.state = {
-           condition : "",
+            condition: "",
         }
     }
 
-    header(){
-        return(
+    header() {
+        return (
             <div>
-                <nav className="navbar-color">
-          <a className="navbar" href="https://github.com/muhammadsarim555" target="_blank">Muhammad Sarim</a>
-          </nav>
+                <nav className="navbar navbar-dark primary-color">
+                    <a className="navbar-brand" href="https://github.com/muhammadsarim555" target="_blank">Muhammad Sarim</a>
+                    {/* <button c1lassName="btn btn-default btn-logout" onClick={this.logOut.bind(this)} >Logout </button> */}
+                </nav>
             </div>
         )
     }
 
-    body(){
-        const {condition} = this.state;
-        return(
+    body() {
+        const { condition } = this.state;
+        return (
             <div>
 
-          {condition === ""  &&  <img src={off} alt="Default image" width="150px" height="150px" />}
-        
-            
-            {condition === "on" && <img src={on} alt="Default image" width="150px" height="150px" />}
-            {condition === "break" && <img src={brokenImage} alt="Default image" width="150px" height="150px" />}
+                {condition === "" && <img src={off} alt="Default image" width="150px" height="200px" />}
+                {condition === "on" && <img src={on} alt="Default image" width="150px" height="200px" />}
+                {condition === "break" && <img src={brokenImage} alt="Default image" width="150px" height="200px" />}
             </div>
         )
 
     }
 
-    updateState(p){
+    updateState(p) {
         this.setState({
-            condition : p,
+            condition: p,
         })
     }
 
@@ -52,12 +51,12 @@ class App extends Component {
         return (
             <div className="app">
                 {this.header()}
-                <br/>
+                <br />
                 {this.body()}
                 <Break updateState={this.updateState.bind(this)} />
-                <OffBulb updateState={this.updateState.bind(this)}  />
-                <On updateState={this.updateState.bind(this)}  />
-                </div>
+                <OffBulb updateState={this.updateState.bind(this)} />
+                <On updateState={this.updateState.bind(this)} />
+            </div>
         );
     }
 }

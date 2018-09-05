@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './../../App.css';
+
 class On extends Component {
   
 
@@ -11,7 +13,7 @@ class On extends Component {
     render() {
         return (
             <div className="app">
-                <button onClick={this.renderState.bind(this , "on")}>On Bulb </button>
+                <button class="btn btn-success" onClick={this.renderState.bind(this , "on")}>On Bulb </button>
                 
                 </div>
         );
