@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-class OffBulb extends Component {
-    
+class On extends Component {
+  
+
    renderState(p){
         this.props.updateState(p);
     }
@@ -10,13 +11,11 @@ class OffBulb extends Component {
     render() {
         return (
             <div className="app">
-
-                <button onClick={this.renderState.bind(this , "")}>Off Bulb </button>
-
+                <button onClick={this.renderState.bind(this , "on")}>On Bulb </button>
                 
                 </div>
         );
     }
 }
 
-export default OffBulb;
+export default On;

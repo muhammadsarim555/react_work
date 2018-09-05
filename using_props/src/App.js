@@ -4,6 +4,9 @@ import on from "./images/on.jpg";
 import brokenImage from "./images/broken.jpg";
 import './App.css';
 import Break from "./Component/BrokenBulb/Broken"
+import OffBulb from "./Component/OffBulb/OffBulb.js"
+import On from "./Component/OnBulb/OnBulb.js"
+
 class App extends Component {
     constructor() {
         super();
@@ -44,7 +47,8 @@ class App extends Component {
             <div className="app">
                 {this.body()}
                 <Break updateState={this.updateState.bind(this)} />
-
+                <OffBulb updateState={this.updateState.bind(this)}  />
+                <On updateState={this.updateState.bind(this)}  />
                 </div>
         );
     }
