@@ -1,24 +1,51 @@
 import React, { Component } from 'react';
-import logo from './on.webp';
+import off from "./images/off.jpg";
+import on from "./images/on.jpg";
+import brokenImage from "./images/broken.jpg";
 import './App.css';
-import Bulb from "./Component/BrokenBulb/Broken"
+import Break from "./Component/BrokenBulb/Broken"
 class App extends Component {
     constructor() {
         super();
         this.state = {
+           condition : "",
         }
     }
 
+    header(){
+
+    }
+
+    body(){
+        const {condition} = this.state;
+        return(
+            <div>
+
+          {condition === ""  &&  <img src={off} alt="Default image" width="150px" height="150px" />}
+        
+            
+            {condition === "on" && <img src={on} alt="Default image" width="150px" height="150px" />}
+            {condition === "break" && <img src={brokenImage} alt="Default image" width="150px" height="150px" />}
+            </div>
+        )
+
+    }
+
+    updateState(p){
+        this.setState({
+            condition : p,
+        })
+    }
 
 
 
     render() {
         return (
             <div className="app">
+                {this.body()}
+                <Break updateState={this.updateState.bind(this)} />
 
-
-
-            </div>
+                </div>
         );
     }
 }
