@@ -21,36 +21,49 @@ class App extends Component {
     };
   }
 
+  header(){
+    return(
+      <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        <div> 
+            <input className="input" value={this.state.inputValue} onChange={(e) => this.checking(e.target.value)}/ >
+            <button onClick={this.submit.bind(this)} >Submit </button>
+            <button onClick={this.bringData.bind(this)} >View Data </button>
+
+          </div>
+        </header>
+    )
+  }
+
   checking(e){
     // console.log(e);
     this.setState({
       inputValue : e,
     })
-    console.log(this.state.inputValue);
+    // console.log(this.state.inputValue);
   }
 
   submit(){
     const {inputValue} = this.state;
-    console.log(inputValue , "input value ")
+    // console.log(inputValue , "input value ")
     firebase.database().ref("Data/").push(inputValue);
 
     this.setState({
       inputValue : "",
     })
   }
-  
 
+bringData(){
+firebase.database().ref("Data/").on("child_added" , (snapshot) => {
+  console.log(snapshot.val() , "getting values")
+})
+}
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        <div> 
-            <input className="input" value={this.state.inputValue} onChange={(e) => this.checking(e.target.value)}/ >
-            <button onClick={this.submit.bind(this)} >Submit </button>
-          </div>
-        </header>
+        {this.header()}
+        
       </div>
     );
   }
