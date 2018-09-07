@@ -36,15 +36,17 @@ submit(p){
     , () => console.log(this.state.array))
     
 }
+hide(index) {
+    const { array } = this.state;
+    array[index].hide = true;
+    this.setState({ array });
+  }
 
-renderBoolean(index){
-    
-    const {array}=this.state
-    array[index].hide=true
-    this.setState({array})
-
-}
-
+  show(index) {
+    const { array } = this.state;
+    array[index].hide = false;
+    this.setState({ array });
+  }
 render() {
     const { text , array ,currentIndex} = this.state; 
     return (
@@ -54,20 +56,26 @@ render() {
         
         <input type="text"  value={this.state.text} onChange={this.userInput} />
         <button onClick={() => this.submit()}> Add  </button>
-        <button onClick={() => this.submit()}> Show  </button>
         
     {text && <h1> You are typing {text.split('').reverse()} </h1> }
-    <ul className="list-group" style={{ textAlign: 'center' }}>
-
-        {
-          array.map((val, index) =>
-            <li  key={index}>
-             {!val.hide &&  <p>{ val.text} | {val.data }</p>} 
-              {/* {console.log(index)} */} 
-             <button onClick={() => this.renderBoolean.bind(this , index)}> Hide  </button>
-            </li>
-          )}
-      </ul>
+    <ul>
+          {array.map((item, index) => {
+            return (
+              <li>
+                {!item.hide && (
+                  <p>
+                    {item.text.split("").reverse()} | {item.data}
+                  </p>
+                )}
+                {!item.hide ? (
+                  <button onClick={this.hide.bind(this, index)}>Hide</button>
+                ) : (
+                  <button onClick={this.show.bind(this, index)}>Show</button>
+                )}
+              </li>
+            );
+          })}
+        </ul>
       {/* {!currentUser && this.renderLogin()}
       {currentUser && !addForm && this.showTable()   }
       {currentUser && addForm && this.addEmployForm() } */}
