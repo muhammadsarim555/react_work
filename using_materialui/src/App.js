@@ -14,17 +14,42 @@ import firebase from 'firebase';
   firebase.initializeApp(config);
 
 class App extends Component {
-  
+  constructor(){
+    super();
+    this.state = {
+      inputValue : "",
+    };
+  }
+
+  checking(e){
+    // console.log(e);
+    this.setState({
+      inputValue : e,
+    })
+    console.log(this.state.inputValue);
+  }
+
+  submit(){
+    const {inputValue} = this.state;
+    console.log(inputValue , "input value ")
+    firebase.database().ref("Data/").push(inputValue);
+
+    this.setState({
+      inputValue : "",
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
+        <div> 
+            <input className="input" value={this.state.inputValue} onChange={(e) => this.checking(e.target.value)}/ >
+            <button onClick={this.submit.bind(this)} >Submit </button>
+          </div>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
