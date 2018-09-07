@@ -26,7 +26,7 @@ class App extends Component {
 submit(p){
     const {array , text} = this.state;
     const obj = {text, data : new Date().toString()};
-    console.log(obj)
+    // console.log(obj)
     array.push(obj)
     this.setState({
         array ,
@@ -40,8 +40,8 @@ hide(index) {
     const { array } = this.state;
     array[index].hide = true;
     this.setState({ array });
+    console.log(array[index])
   }
-
   show(index) {
     const { array } = this.state;
     array[index].hide = false;
