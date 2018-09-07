@@ -67,7 +67,7 @@ class App extends Component {
     this.setState({
       array :  gettingArray,
     })
-    
+  
   }
 
 
@@ -79,7 +79,7 @@ class App extends Component {
         <ul>
         {
       array.map((v,i)=> {
-        // console.log(v , "v for value")
+        console.log(v , "v for value")
         return <li>
           {v}
           </li>
