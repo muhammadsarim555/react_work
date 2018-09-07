@@ -30,7 +30,6 @@ class App extends Component {
         const { condition } = this.state;
         return (
             <div>
-
                 {condition === "" && <img src={off} alt="Default image" width="150px" height="200px" />}
                 {condition === "on" && <img src={on} alt="Default image" width="150px" height="200px" />}
                 {condition === "break" && <img src={brokenImage} alt="Default image" width="150px" height="200px" />}
