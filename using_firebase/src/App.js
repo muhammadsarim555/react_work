@@ -18,6 +18,7 @@ class App extends Component {
     super();
     this.state = {
       inputValue : "",
+      array: [],
     };
   }
 
@@ -55,10 +56,13 @@ class App extends Component {
   }
 
 bringData(){
+  
+  const {array} = this.state;
 firebase.database().ref("Data/").on("child_added" , (snapshot) => {
-  console.log(snapshot.val() , "getting values")
-})
-}
+    console.log(snapshot.val())
+  })
+  }
+
   render() {
     return (
       <div className="App">
