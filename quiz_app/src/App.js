@@ -47,12 +47,13 @@ back(){
       signUpPassword : u ,
     })
     console.log("updated " , this.state.signUpEmail);
+    // console.log("password " , this.state.signUpPassword);
   }
 
 
  render() {
   // const boolean = {this.state};
-    console.log(this.state.quizzes)
+    // console.log(this.state.quizzes)
 
     return (
       <div className="App">
