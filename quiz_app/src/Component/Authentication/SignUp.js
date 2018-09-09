@@ -2,21 +2,20 @@ import React, { Component } from 'react';
 import './../../App.css';
 
 class SignUp extends Component {
- constructor(){
-     super();
-
-     this.renderBody = this.renderBody.bind(this);
- }
+    constructor(props){
+        super(props);
+        this.state = {
+            update : "",
+        }
+    }
     renderBody(){
-        const signUp = "Sign Up Form";
-        // console.log(this.props.updateEmailPassword , "chekgin??? ")
-        // {}
-
+        
+        // console.log(e.target.value)
         return(
             <div>
-                <h1> {signUp} </h1>
-                <input type="email" placeholder="Email" onChange={(e) => this.gettingEmail(e.target.value)} />
-                {/* <input type="password" placeholder="Password" onChange={(e) => this.gettingInput(e.target.value)} /> */}
+                <h1> Sign Up Form </h1>
+            <input type="email" placeholder="Email" value={this.state.update} onChange={ this.gettingEmail.bind(this )} />
+                {/* <input type="password" placeholder="Password" onChange={ this.gettingEmail.bind(this)} /> */}
                 <button onClick={this.SubmitData.bind(this )}>Submit </button>
                 </div>
 
@@ -25,14 +24,20 @@ class SignUp extends Component {
     }
 
     gettingEmail(e){
-         this.props.updateEmailPassword(e)
+        this.setState({
+            update : e.target.value,
+        })
+        const {update } = this.state;
 
-        // console.log(e ,"geeitng input from user ");
+        const {updateEmailPassword} = this.props;
+        
+        // console.log("geeting email" , updateEmailPassword(update))
     }
 
     SubmitData(e){
-        console.log(this.props.updateEmailPassword(e) )
-        // const {updateEmailPassword} = this.props;
+        const {updateEmailPassword} = this.props;
+        updateEmailPassword(this.state.update);
+        console.log(updateEmailPassword(e) )
         // console.log(updateEmailPassword(e) , "123chekign");
         // console.log(this.props.updateEmailPassword , "chekingrigh nwe");
 
@@ -47,7 +52,9 @@ class SignUp extends Component {
     render() {
         return (
             <div className="app">
+            
             {this.renderBody()}
+            <button value={this.state.update} onClick={this.SubmitData.bind(this)} > </button>
             </div>
         );
     }

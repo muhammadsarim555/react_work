@@ -44,16 +44,14 @@ back(){
   updateEmailPassword(u){
     this.setState({
       signUpEmail : u,
-      signUpPassword : u ,
+      // signUpPassword : u ,
     })
-    console.log("updated " , this.state.signUpEmail);
-    // console.log("password " , this.state.signUpPassword);
   }
 
 
  render() {
   // const boolean = {this.state};
-    // console.log(this.state.quizzes)
+    // console.log(this.state.signUpEmail)
 
     return (
       <div className="App">

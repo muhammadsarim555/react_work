@@ -6,12 +6,14 @@ import './App.css';
 import Break from "./Component/BrokenBulb/Broken";
 import OffBulb from "./Component/OffBulb/OffBulb.js";
 import On from "./Component/OnBulb/OnBulb.js";
+import Data from './Communication/Data/Data';
 
 class App extends Component {
     constructor() {
         super();
         this.state = {
             condition: "",
+            name : "Sarim",
         }
     }
 
@@ -19,7 +21,7 @@ class App extends Component {
         return (
             <div>
                 <nav className="navbar navbar-dark primary-color">
-                    <a className="navbar-brand" href="https://github.com/muhammadsarim555" target="_blank">Muhammad Sarim</a>
+                    <a className="navbar-brand" href="https://github.com/muhammadsarim555" target="_blank">{this.state.name}</a>
                     {/* <button c1lassName="btn btn-default btn-logout" onClick={this.logOut.bind(this)} >Logout </button> */}
                 </nav>
             </div>
@@ -44,6 +46,12 @@ class App extends Component {
         })
     }
 
+    // child to parent
+    checking(e){
+        this.setState({
+            name : e ,
+        })
+    }
 
 
     render() {
@@ -55,6 +63,8 @@ class App extends Component {
                 <Break updateState={this.updateState.bind(this)} />
                 <OffBulb updateState={this.updateState.bind(this)} />
                 <On updateState={this.updateState.bind(this)} />
+
+                <Data change={this.checking.bind(this)} />
             </div>
         );
     }
