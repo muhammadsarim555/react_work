@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import './Container.css';
 
-class Heading extends Component { 
+class Container extends Component { 
   constructor(){
     super();
     this.state = {
@@ -9,11 +10,11 @@ class Heading extends Component {
 render() {
     return (
         
-        <div className="App">
-            <h1>We are going To work </h1>
+        <div className="App" >
+        This is Composable Component
       </div>
     );
   }
 }
 
-export default Heading;
+export default Container;

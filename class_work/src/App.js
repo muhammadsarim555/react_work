@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Heading from './Screen/Heading/Heading';
+import Container from './Container/App/Container';
 import './App.css';
 
 class App extends Component { 
@@ -40,7 +41,7 @@ submit(p){
 hide(index) {
     const { array } = this.state;
     array[index].hide = true;
-    this.setState({ array });
+    this.setState({ array : array });
     console.log(array[index])
   }
   show(index) {
@@ -53,6 +54,7 @@ render() {
     return (
         
         <div className="App">
+        <Container />
         <Heading />
         {/* {this.userInput()} */}
         
