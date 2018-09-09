@@ -5,7 +5,9 @@ class SignUp extends Component {
     constructor(props){
         super(props);
         this.state = {
-            update : "",
+            updateEmail : "",
+            updatePassword : "",
+
         }
     }
     renderBody(){
@@ -14,8 +16,8 @@ class SignUp extends Component {
         return(
             <div>
                 <h1> Sign Up Form </h1>
-            <input type="email" placeholder="Email" value={this.state.update} onChange={ this.gettingEmail.bind(this )} />
-                {/* <input type="password" placeholder="Password" onChange={ this.gettingEmail.bind(this)} /> */}
+            <input type="email" placeholder="Email" value={this.state.updateEmail} onChange={(e) => this.setState({updateEmail: e.target.value}) } />
+                {/* <input type="password" placeholder="Password" value={this.state.updatePassword} onChange={ this.gettingEmail.bind(this)} /> */}
                 <button onClick={this.SubmitData.bind(this )}>Submit </button>
                 </div>
 
@@ -24,12 +26,12 @@ class SignUp extends Component {
     }
 
     gettingEmail(e){
-        const { update } = this.state;
+        const { updateEmail  } = this.state;
         const { getEmailPassword } = this.props;
-        let pureValue = e.target.value;
+        // let pureValue = e.target.value;
         this.setState(
             {
-            update: pureValue,
+            updateEmail,
             }
     )
 
@@ -40,9 +42,9 @@ class SignUp extends Component {
 
     SubmitData(){
         // const {getEmailPassword} = this.props;
-        const {update} = this.state;
-        this.props.getEmailPassword(update);
-        localStorage.setItem("email" , update);
+        const {updateEmail} = this.state;
+        this.props.getEmailPassword(updateEmail);
+        localStorage.setItem("email" , updateEmail);
         this.setState({
             update: '',
         })
