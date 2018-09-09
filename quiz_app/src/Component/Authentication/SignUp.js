@@ -7,7 +7,7 @@ class SignUp extends Component {
         this.state = {
             updateEmail : '',
             updatePassword : '',
-        }
+            }
     }
     renderBody(){
         
@@ -31,8 +31,8 @@ class SignUp extends Component {
             {
             updateEmail: pureValue,
             }
-    )
 
+        )
     }
 
     gettingPassword(e){
@@ -43,19 +43,25 @@ class SignUp extends Component {
             updatePassword: pureValue,
             }
     )
+}
 
-    }
+updateBoolean(e){
+    console.log(e);
+}
 
     SubmitData(){
         // const {getEmailPassword} = this.props;
         const {updateEmail , updatePassword} = this.state;
+        
         this.props.getEmail(updateEmail);
         this.props.getPassword(updatePassword);
         localStorage.setItem("email" , updateEmail);
         localStorage.setItem("password" , updatePassword);
+        this.props.getBoolean(this.updateBoolean.bind(this))
 
         this.setState({
             updateEmail: '',
+            updatePassword: '',
         })
         
     }

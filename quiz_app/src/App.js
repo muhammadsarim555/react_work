@@ -23,7 +23,7 @@ class App extends Component {
       signUpPassword: '',
       signUpUser: false,
       currentUser: true,
-      
+      signupBoolean : false,
     };
     this.buttonIndex = this.buttonIndex.bind(this)
   }
@@ -70,14 +70,25 @@ updatePassword(u) {
     )
   }
 
+// for signup update boolean
+updateBoolean(u) {
+
+  this.setState({
+       signupBoolean : u,
+    }
+  )
+}
+
+
   render() {
-    // const boolean = {this.state};
+    const {signupBoolean} = this.state;
     // console.log(this.state.signUpEmail)
 
     return (
       <div className="App">
         {this.renderHeader()}
-        <SignUp getEmail={this.updateEmail.bind(this)} getPassword={this.updatePassword.bind(this)} />
+        {!signupBoolean &&  <SignUp getEmail={this.updateEmail.bind(this)} getPassword={this.updatePassword.bind(this)} getBoolean={this.updateBoolean.bind(this)} />}
+        {signupBoolean && <h1>Welcome </h1> }
         {/* {!this.state.boolean && <QuizList quizzes={this.state.quizzes} buttonIndex={this.buttonIndex}  />}
         {this.state.boolean && <QuizInfo quizInfo={this.state.quizInfo}  backButton={this.back.bind(this)}  />}
          */}
