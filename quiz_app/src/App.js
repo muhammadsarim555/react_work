@@ -42,15 +42,24 @@ class App extends Component {
   }
 
   // for signup component
-  updateEmailPassword(u) {
+  updateEmail(u) {
 
     this.setState({
          signUpEmail : u,
-         signUpPassword : u,
       }
     )
   }
 
+// for signup component pasword
+updatePassword(u) {
+
+  this.setState({
+       signUpPassword : u,
+    }
+  )
+}
+
+  
   renderHeader(){
     return (
       <div className="nav">
@@ -68,7 +77,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.renderHeader()}
-        <SignUp getEmailPassword={this.updateEmailPassword.bind(this)} />
+        <SignUp getEmail={this.updateEmail.bind(this)} getPassword={this.updatePassword.bind(this)} />
         {/* {!this.state.boolean && <QuizList quizzes={this.state.quizzes} buttonIndex={this.buttonIndex}  />}
         {this.state.boolean && <QuizInfo quizInfo={this.state.quizInfo}  backButton={this.back.bind(this)}  />}
          */}

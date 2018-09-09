@@ -5,9 +5,8 @@ class SignUp extends Component {
     constructor(props){
         super(props);
         this.state = {
-            updateEmail : "",
-            updatePassword : "",
-
+            updateEmail : '',
+            updatePassword : '',
         }
     }
     renderBody(){
@@ -16,8 +15,8 @@ class SignUp extends Component {
         return(
             <div>
                 <h1> Sign Up Form </h1>
-            <input type="email" placeholder="Email" value={this.state.updateEmail} onChange={(e) => this.setState({updateEmail: e.target.value}) } />
-                {/* <input type="password" placeholder="Password" value={this.state.updatePassword} onChange={ this.gettingEmail.bind(this)} /> */}
+            <input type="email" placeholder="Email" value={this.state.updateEmail} onChange={ this.gettingEmail.bind(this )} />
+                <input type="password" placeholder="Password" value={this.state.updatePassword} onChange={ this.gettingPassword.bind(this)} />
                 <button onClick={this.SubmitData.bind(this )}>Submit </button>
                 </div>
 
@@ -26,27 +25,37 @@ class SignUp extends Component {
     }
 
     gettingEmail(e){
-        const { updateEmail  } = this.state;
-        const { getEmailPassword } = this.props;
-        // let pureValue = e.target.value;
+        const { updateEmail } = this.state;
+        let pureValue = e.target.value;
         this.setState(
             {
-            updateEmail,
+            updateEmail: pureValue,
             }
     )
 
     }
 
-    
+    gettingPassword(e){
+        const { updatePassword } = this.state;
+        let pureValue = e.target.value;
+        this.setState(
+            {
+            updatePassword: pureValue,
+            }
+    )
 
+    }
 
     SubmitData(){
         // const {getEmailPassword} = this.props;
-        const {updateEmail} = this.state;
-        this.props.getEmailPassword(updateEmail);
+        const {updateEmail , updatePassword} = this.state;
+        this.props.getEmail(updateEmail);
+        this.props.getPassword(updatePassword);
         localStorage.setItem("email" , updateEmail);
+        localStorage.setItem("password" , updatePassword);
+
         this.setState({
-            update: '',
+            updateEmail: '',
         })
         
     }
