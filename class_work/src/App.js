@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Heading from './Screen/Heading/Heading';
 import './App.css';
 
 class App extends Component { 
@@ -52,6 +53,7 @@ render() {
     return (
         
         <div className="App">
+        <Heading />
         {/* {this.userInput()} */}
         
         <input type="text"  value={this.state.text} onChange={this.userInput} />
