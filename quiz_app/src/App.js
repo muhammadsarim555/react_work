@@ -44,10 +44,9 @@ class App extends Component {
   // for signup component
   updateEmailPassword(u) {
 
-    this.setState
-      (
-        {
+    this.setState({
          signUpEmail : u,
+         signUpPassword : u,
       }
     )
   }
@@ -56,6 +55,8 @@ class App extends Component {
     return (
       <div className="nav">
         <h1> {this.state.signUpEmail} </h1>
+        <h2> {this.state.signUpPassword} </h2>
+        
       </div>
     )
   }

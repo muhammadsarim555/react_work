@@ -42,6 +42,7 @@ class SignUp extends Component {
         // const {getEmailPassword} = this.props;
         const {update} = this.state;
         this.props.getEmailPassword(update);
+        localStorage.setItem("email" , update);
         this.setState({
             update: '',
         })
