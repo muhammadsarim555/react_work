@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 class Login extends Component {
-    constructor() {
-        super()
+    constructor(props){
+        super(props);
         
-        // this.getEmail = this.getEmail.bind(this);
+        this.checkEmail = this.checkEmail.bind(this);
     }
 
     checkEmail() {
