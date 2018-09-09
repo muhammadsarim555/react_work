@@ -24,23 +24,27 @@ class SignUp extends Component {
     }
 
     gettingEmail(e){
-        this.setState({
-            update : e.target.value,
-        })
-        const {update } = this.state;
+        const { update } = this.state;
+        const { getEmailPassword } = this.props;
+        let pureValue = e.target.value;
+        this.setState(
+            {
+            update: pureValue,
+            }
+    )
 
-        const {updateEmailPassword} = this.props;
-        
-        // console.log("geeting email" , updateEmailPassword(update))
     }
 
-    SubmitData(e){
-        const {updateEmailPassword} = this.props;
-        updateEmailPassword(this.state.update);
-        console.log(updateEmailPassword(e) )
-        // console.log(updateEmailPassword(e) , "123chekign");
-        // console.log(this.props.updateEmailPassword , "chekingrigh nwe");
+    
 
+
+    SubmitData(){
+        // const {getEmailPassword} = this.props;
+        const {update} = this.state;
+        this.props.getEmailPassword(update);
+        this.setState({
+            update: '',
+        })
         
     }
 
@@ -54,7 +58,8 @@ class SignUp extends Component {
             <div className="app">
             
             {this.renderBody()}
-            <button value={this.state.update} onClick={this.SubmitData.bind(this)} > </button>
+            {/* <button value={this.state.update} onClick={this.SubmitData.bind(this)} > </button> */}
+            
             </div>
         );
     }

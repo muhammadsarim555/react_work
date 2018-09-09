@@ -19,47 +19,59 @@ class App extends Component {
       // ],
       // quizInfo : null,
       // boolean: false,
-      signUpEmail: '',
+      signUpEmail: 'sarim',
       signUpPassword: '',
-      signUpUser : false,
+      signUpUser: false,
       currentUser: true,
-    }
+      
+    };
     this.buttonIndex = this.buttonIndex.bind(this)
   }
 
- buttonIndex(index){
-   const {quizzes } = this.state;
-  console.log(this.state.quizzes)
-  this.setState({quizInfo: quizzes[index] , boolean : true})
-  console.log(this.state.quizInfo , "qiox info" );
- }
+  buttonIndex(index) {
+    const { quizzes } = this.state;
+    console.log(this.state.quizzes)
+    this.setState({ quizInfo: quizzes[index], boolean: true })
+    console.log(this.state.quizInfo, "qiox info");
+  }
 
-back(){
-  this.setState({
-    boolean: false,
-  })
-}
-
-// for signup component
-  updateEmailPassword(u){
+  back() {
     this.setState({
-      signUpEmail : u,
-      // signUpPassword : u ,
+      boolean: false,
     })
   }
 
+  // for signup component
+  updateEmailPassword(u) {
 
- render() {
-  // const boolean = {this.state};
+    this.setState
+      (
+        {
+         signUpEmail : u,
+      }
+    )
+  }
+
+  renderHeader(){
+    return (
+      <div className="nav">
+        <h1> {this.state.signUpEmail} </h1>
+      </div>
+    )
+  }
+
+  render() {
+    // const boolean = {this.state};
     // console.log(this.state.signUpEmail)
 
     return (
       <div className="App">
-       <SignUp updateEmailPassword={this.updateEmailPassword.bind(this)} />
+        {this.renderHeader()}
+        <SignUp getEmailPassword={this.updateEmailPassword.bind(this)} />
         {/* {!this.state.boolean && <QuizList quizzes={this.state.quizzes} buttonIndex={this.buttonIndex}  />}
         {this.state.boolean && <QuizInfo quizInfo={this.state.quizInfo}  backButton={this.back.bind(this)}  />}
          */}
-        </div>
+      </div>
     );
   }
 }
