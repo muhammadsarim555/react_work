@@ -7,6 +7,7 @@ class SignUp extends Component {
         this.state = {
             updateEmail : '',
             updatePassword : '',
+            b: false,
             }
     }
     renderBody(){
@@ -47,11 +48,15 @@ class SignUp extends Component {
 
 updateBoolean(e){
     console.log(e);
+//     this.setState({
+//         b: true,
+//     })
+//     alert("Good")
 }
 
     SubmitData(){
         // const {getEmailPassword} = this.props;
-        const {updateEmail , updatePassword} = this.state;
+        const {updateEmail , updatePassword , b} = this.state;
         
         this.props.getEmail(updateEmail);
         this.props.getPassword(updatePassword);
