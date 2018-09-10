@@ -48,6 +48,7 @@ class App extends Component {
          signUpEmail : u,
       }
     )
+    console.log(u)
   }
 
 // for signup component pasword
@@ -88,7 +89,7 @@ updateBoolean(u) {
       <div className="App">
         {this.renderHeader()}
         {!signupBoolean &&  <SignUp getEmail={this.updateEmail.bind(this)} getPassword={this.updatePassword.bind(this)} getBoolean={this.updateBoolean.bind(this)} />}
-        {signupBoolean && <Login /> }
+        {signupBoolean && <Login updateEmail={this.updateEmail.bind(this)} updatePassword={this.updatePassword.bind(this)} /> }
         {/* {!this.state.boolean && <QuizList quizzes={this.state.quizzes} buttonIndex={this.buttonIndex}  />}
         {this.state.boolean && <QuizInfo quizInfo={this.state.quizInfo}  backButton={this.back.bind(this)}  />}
          */}
