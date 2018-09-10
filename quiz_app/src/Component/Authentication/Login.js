@@ -42,14 +42,11 @@ class Login extends Component {
         const getPassword = localStorage.getItem('password');
         this.props.updateEmail(email);
         this.props.updatePassword(password);
-        // this.props.updateBoolean(true)
         if(email === getEmail && password === getPassword ) {
             alert("success")
-            // this.setState({
-            //     boolean : true,
-            // })
+         
             this.props.boolean( true);
-            // this.props.updateBoolean()
+            // this.props.loginBoolean(true)
         }
         else{console.log("error for this")}  
         

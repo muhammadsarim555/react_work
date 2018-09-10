@@ -11,19 +11,20 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // quizzes : [
-      //   {name: "HTML" , questions : 10, },
-      //   {name: "CSS" , questions : 10, },
-      //   {name: "JavaScript" , questions : 10, },
-      //   {name: "React" , questions : 10, },
-      // ],
-      // quizInfo : null,
-      // boolean: false,
+      quizzes : [
+        {name: "HTML" , questions : 10, },
+        {name: "CSS" , questions : 10, },
+        {name: "JavaScript" , questions : 10, },
+        {name: "React" , questions : 10, },
+      ],
+      quizInfo : null,
+      boolean: false,
       signUpEmail: 'sarim',
       signUpPassword: '',
       signUpUser: false,
       currentUser: true,
       signupBoolean : false,
+      loginBoolean: false,
     };
     this.buttonIndex = this.buttonIndex.bind(this)
   }
@@ -90,10 +91,10 @@ updateBoolean(u) {
       <div className="App">
         {this.renderHeader()}
         {!signupBoolean &&  <SignUp getEmail={this.updateEmail.bind(this)} getPassword={this.updatePassword.bind(this)} getBoolean={this.updateBoolean.bind(this)} />}
-        {signupBoolean && <Login updateEmail={this.updateEmail.bind(this)} updatePassword={this.updatePassword.bind(this)} boolean={this.state.signupBoolean} /> }
-        {/* {!this.state.boolean && <QuizList quizzes={this.state.quizzes} buttonIndex={this.buttonIndex}  />}
+        {signupBoolean && <Login updateEmail={this.updateEmail.bind(this)} updatePassword={this.updatePassword.bind(this)} boolean={this.state.signupBoolean} loginBoolean={this.state.loginBoolean}  />  }
+        {!this.state.boolean && <QuizList quizzes={this.state.quizzes} buttonIndex={this.buttonIndex}  />}
         {this.state.boolean && <QuizInfo quizInfo={this.state.quizInfo}  backButton={this.back.bind(this)}  />}
-         */}
+        
       </div>
     );
   }
