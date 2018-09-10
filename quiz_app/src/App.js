@@ -78,6 +78,7 @@ updateBoolean(u) {
        signupBoolean : u,
     }
   )
+  console.log(this.state.signupBoolean , "chekcingboolean");
 }
 
 
@@ -89,7 +90,7 @@ updateBoolean(u) {
       <div className="App">
         {this.renderHeader()}
         {!signupBoolean &&  <SignUp getEmail={this.updateEmail.bind(this)} getPassword={this.updatePassword.bind(this)} getBoolean={this.updateBoolean.bind(this)} />}
-        {signupBoolean && <Login updateEmail={this.updateEmail.bind(this)} updatePassword={this.updatePassword.bind(this)} /> }
+        {signupBoolean && <Login updateEmail={this.updateEmail.bind(this)} updatePassword={this.updatePassword.bind(this)} boolean={this.state.signupBoolean} /> }
         {/* {!this.state.boolean && <QuizList quizzes={this.state.quizzes} buttonIndex={this.buttonIndex}  />}
         {this.state.boolean && <QuizInfo quizInfo={this.state.quizInfo}  backButton={this.back.bind(this)}  />}
          */}

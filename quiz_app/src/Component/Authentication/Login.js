@@ -6,7 +6,9 @@ class Login extends Component {
         this.state = {
             email: '',
             password: '',
-        }
+            
+            }
+            // this.updateBoolean = this.updateBoolean.bind(this , true);
             }
 
     checkEmail(e){
@@ -27,13 +29,29 @@ class Login extends Component {
         // console.log(email);
     }
 
+    // updateBoolean(e){
+    //     this.setState({
+    //         boolean : e,
+    //     })
+        
+    // }
+    
     getEmail() {
         const getEmail = localStorage.getItem('email');
-        const {email , password} = this.state;
+        const {email , password ,boolean} = this.state;
         const getPassword = localStorage.getItem('password');
         this.props.updateEmail(email);
         this.props.updatePassword(password);
-        email === getEmail && password === getPassword ? (alert("success")) : (console.log("error for this"))  
+        // this.props.updateBoolean(true)
+        if(email === getEmail && password === getPassword ) {
+            alert("success")
+            // this.setState({
+            //     boolean : true,
+            // })
+            this.props.boolean( true);
+            // this.props.updateBoolean()
+        }
+        else{console.log("error for this")}  
         
 
         console.log('Email', getEmail , 'Password' , getPassword );
