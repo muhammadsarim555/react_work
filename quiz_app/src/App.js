@@ -21,10 +21,10 @@ class App extends Component {
       boolean: false,
       signUpEmail: 'sarim',
       signUpPassword: '',
-      signUpUser: false,
-      currentUser: true,
-      signupBoolean : false,
-      loginBoolean: false,
+      // signUpUser: false,
+      // currentUser: true,
+      // signupBoolean : false,
+      // loginBoolean: false,
     };
     this.buttonIndex = this.buttonIndex.bind(this)
   }
@@ -90,10 +90,10 @@ updateBoolean(u) {
     return (
       <div className="App">
         {this.renderHeader()}
-        {!signupBoolean &&  <SignUp getEmail={this.updateEmail.bind(this)} getPassword={this.updatePassword.bind(this)} getBoolean={this.updateBoolean.bind(this)} />}
-        {signupBoolean && <Login updateEmail={this.updateEmail.bind(this)} updatePassword={this.updatePassword.bind(this)} boolean={this.state.signupBoolean} loginBoolean={this.state.loginBoolean}  />  }
-        {!this.state.boolean && <QuizList quizzes={this.state.quizzes} buttonIndex={this.buttonIndex}  />}
-        {this.state.boolean && <QuizInfo quizInfo={this.state.quizInfo}  backButton={this.back.bind(this)}  />}
+          {/* <SignUp getEmail={this.updateEmail.bind(this)} getPassword={this.updatePassword.bind(this)} getBoolean={this.updateBoolean.bind(this)} />
+        <Login updateEmail={this.updateEmail.bind(this)} updatePassword={this.updatePassword.bind(this)} boolean={this.state.signupBoolean} loginBoolean={this.state.loginBoolean}  />   */}
+         <QuizList quizzes={this.state.quizzes} buttonIndex={this.buttonIndex}  />
+         <QuizInfo quizInfo={this.state.quizInfo}  backButton={this.back.bind(this)}  />
         
       </div>
     );

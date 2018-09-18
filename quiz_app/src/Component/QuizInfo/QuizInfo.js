@@ -3,7 +3,9 @@ import './../../App.css';
 
 class QuizInfo extends Component {
  
-    
+    ComponentWillReceiveProps(){
+        
+    }
 
     render() {
         const {quizInfo , backButton} = this.props;
