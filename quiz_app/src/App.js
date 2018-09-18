@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import QuizList from './Component/QuizList/QuizList';
 import QuizInfo from './Component/QuizInfo/QuizInfo';
-import Login from './Component/Authentication/Login';
-import SignUp from './Component/Authentication/SignUp';
+import SignUp from './Component/Authentication/SignUp.jsx';
+import Login from './Component/Authentication/Login.jsx';
+import Test from './Component/Authentication/Test.jsx';
+import LogOut from './Component/Authentication/LogOut.jsx';
 
 
 
@@ -19,14 +21,22 @@ class App extends Component {
       ],
       quizInfo : null,
       boolean: false,
-      signUpEmail: 'sarim',
-      signUpPassword: '',
-      // signUpUser: false,
-      // currentUser: true,
-      // signupBoolean : false,
-      // loginBoolean: false,
+      name: '',
+      email: '',
+      password: '',
+      loginEmail: '',
+      loginPassword: '',
+      currentUser: false,
     };
     this.buttonIndex = this.buttonIndex.bind(this)
+    this.signUpName = this.signUpName.bind(this);
+    this.signUpEmail = this.signUpEmail.bind(this);
+    this.signUpPassword = this.signUpPassword.bind(this);
+    this.submitData = this.submitData.bind(this);
+    this.loginEmail = this.loginEmail.bind(this);
+    this.loginPassword = this.loginPassword.bind(this);
+    this.loginButton = this.loginButton.bind(this);
+    this.logOut = this.logOut.bind(this);
   }
 
   buttonIndex(index) {
@@ -62,29 +72,92 @@ updatePassword(u) {
 }
 
   
-  renderHeader(){
-    return (
-      <div className="nav">
-        <h1> {this.state.signUpEmail} </h1>
-        <h2> {this.state.signUpPassword} </h2>
-        
-      </div>
-    )
+  // signup component working update state via parameter
+
+  signUpName(e) {
+    this.setState({
+      name: e.target.value,
+    })
   }
 
-// for signup update boolean
-updateBoolean(u) {
+  signUpEmail(e) {
+    this.setState({
+      email: e.target.value,
+    })
+  }
 
-  this.setState({
-       signupBoolean : u,
-    }
-  )
-  console.log(this.state.signupBoolean , "chekcingboolean");
-}
+  signUpPassword(e) {
+    this.setState({
+      password: e.target.value,
+    })
+  }
 
+  submitData() {
+    const { name, email, password } = this.state;
+
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+
+    // console.log(this.state.email);
+    // console.log(this.state.password);
+    this.setState({
+      email: '',
+      password: '',
+      name: '',
+    })
+  }
+
+  // login work for users
+
+  loginEmail(e) {
+    this.setState({
+      loginEmail: e.target.value,
+    })
+  }
+
+  loginPassword(e) {
+    this.setState({
+      loginPassword: e.target.value,
+    })
+  }
+
+  loginButton() {
+    const { loginEmail, loginPassword } = this.state;
+    const email = localStorage.getItem('email');
+    const password = localStorage.getItem('password');
+    loginEmail === email
+      &&
+      loginPassword === password
+      ?
+      (this.setState({
+        currentUser: true,
+      }),
+        alert("succeess"))
+      :
+      (console.log("error"));
+    this.setState({
+      loginEmail: '',
+      loginPassword: '',
+    })
+    // console.log(this.state.loginEmail);
+
+
+    // console.log(email);
+    // console.log(password);
+  }
+
+  // logout button
+
+  logOut() {
+    this.setState({
+      currentUser: false,
+    })
+  }
 
   render() {
-    const {signupBoolean} = this.state;
+    const { currentUser } = this.state;
+
     // console.log(this.state.signUpEmail)
 
     return (
