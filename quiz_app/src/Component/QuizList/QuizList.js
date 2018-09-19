@@ -9,9 +9,9 @@ class QuizList extends Component {
  }
    
 
-//  gettingIndex(index){
-//     console.log(index)
-//  }
+ gettingIndex(index){
+    console.log(index)
+ }
 
 render() {
     const {quizzes} = this.props;
