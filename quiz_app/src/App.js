@@ -147,13 +147,17 @@ logOut() {
 
 {currentUser && <LogOut state={this.state} logOut={this.logOut} />}
 
+Sign Up Form
 {!currentUser && <SignUp signUpName={this.signUpName} signUpEmail={this.signUpEmail}
 signUpPassword={this.signUpPassword} submitData={this.submitData} state={this.state} />}
+
+<br/>
+      Login Form
 {!currentUser && <Login loginEmail={this.loginEmail} loginPassword={this.loginPassword}
    loginButton={this.loginButton} state={this.state} />
  }
         {/* {currentUser && <Test />} */}
-        {currentUser && !this.state.boolean && <QuizList quizzes={this.state.quizzes} buttonIndex={this.buttonIndex}  />}
+        {currentUser && !this.state.boolean && <QuizList quizzes={this.state.quizzes} quizInfo={this.state.quizInfo} buttonIndex={this.buttonIndex}  />}
         {currentUser && this.state.boolean && <QuizInfo quizInfo={this.state.quizInfo}  backButton={this.back.bind(this)}  />}
         
         </div>

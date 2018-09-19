@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
 
 class QuizList extends Component {
- constructor(props){
-     super(props);
-     this.state = {
-
-     }
- }
-   
+  
+ 
 
  gettingIndex(index){
     console.log(index)
  }
 
+ renderQuestions(){
+    return(
+        <div>
+
+            <h1> this is testing</h1>
+        
+        </div>
+    );
+
+}
 render() {
-    const {quizzes} = this.props;
+    const {quizzes } = this.props;
         return (
             <div className="app">
                     <ul>
@@ -26,7 +31,7 @@ render() {
                     </li> 
                 })
             }
-            </ul>             
+        </ul>                 
                 </div>
         );
     }
