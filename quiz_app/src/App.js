@@ -139,7 +139,7 @@ logOut() {
 
  render() {
   // const boolean = {this.state};
-    console.log(this.state.quizzes)
+    // console.log(this.state.quizzes)
     const { currentUser } = this.state;
 
     return (
@@ -152,9 +152,9 @@ signUpPassword={this.signUpPassword} submitData={this.submitData} state={this.st
 {!currentUser && <Login loginEmail={this.loginEmail} loginPassword={this.loginPassword}
    loginButton={this.loginButton} state={this.state} />
  }
-        {currentUser && <Test />}
-        {!this.state.boolean && <QuizList quizzes={this.state.quizzes} buttonIndex={this.buttonIndex}  />}
-        {this.state.boolean && <QuizInfo quizInfo={this.state.quizInfo}  backButton={this.back.bind(this)}  />}
+        {/* {currentUser && <Test />} */}
+        {currentUser && !this.state.boolean && <QuizList quizzes={this.state.quizzes} buttonIndex={this.buttonIndex}  />}
+        {currentUser && this.state.boolean && <QuizInfo quizInfo={this.state.quizInfo}  backButton={this.back.bind(this)}  />}
         
         </div>
     );
