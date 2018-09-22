@@ -13,12 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quizzes : [
-        {name: "HTML" , questions : 10, },
-        {name: "CSS" , questions : 10, },
-        {name: "JavaScript" , questions : 10, },
-        {name: "React" , questions : 10, },
-      ],
+    
       quizInfo : null,
       boolean: false,
       name: '',
@@ -28,7 +23,7 @@ class App extends Component {
       loginPassword: '',
       currentUser: false,
     }
-    this.buttonIndex = this.buttonIndex.bind(this);
+    // this.buttonIndex = this.buttonIndex.bind(this);
     this.signUpName = this.signUpName.bind(this);
     this.signUpEmail = this.signUpEmail.bind(this);
     this.signUpPassword = this.signUpPassword.bind(this);
@@ -39,12 +34,7 @@ class App extends Component {
     this.logOut = this.logOut.bind(this);
   }
 
- buttonIndex(index){
-   const {quizzes } = this.state;
-  console.log(this.state.quizzes)
-  this.setState({quizInfo: quizzes[index] , boolean : true})
-  console.log(this.state.quizInfo , "qiox info" );
- }
+ 
 
 back(){
   this.setState({
@@ -158,7 +148,7 @@ signUpPassword={this.signUpPassword} submitData={this.submitData} state={this.st
  }
         {/* {currentUser && <Test />} */}
         {currentUser && !this.state.boolean && <QuizList quizzes={this.state.quizzes} quizInfo={this.state.quizInfo} buttonIndex={this.buttonIndex}  />}
-        {currentUser && this.state.boolean && <QuizInfo quizInfo={this.state.quizInfo}  backButton={this.back.bind(this)}  />}
+        {/* {currentUser && this.state.boolean && <QuizInfo quizInfo={this.state.quizInfo}  backButton={this.back.bind(this)}  />} */}
         
         </div>
     );

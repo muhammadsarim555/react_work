@@ -425,24 +425,46 @@ class QuizInfo extends Component {
          saveSelectedQuizObj: null,
 };
 console.log(this.props.quizInfo , "quizInfo");
+this.buttonIndex = this.buttonIndex.bind(this);
 
 }
 
+buttonIndex(index){
+  const {quiz_info } = this.state;
+ console.log(quiz_info);
+ this.setState({saveSelectedQuizObj: quiz_info[index] , test : true})
+//  console.log(this.state.quizInfo , "qiox info" );
+}
 
-    renderState(p){
-        this.props.updateState(p);
+    quizInfo(){
+        const {quizInfo , backButton} = this.props;
+        const {saveSelectedQuizObj} = this.state;
+        console.log(saveSelectedQuizObj.quizName , 'quizInfo');
+            return(
+            <div>
+                 <h2>{saveSelectedQuizObj.quizName} Quiz</h2>
+                 {
+                   saveSelectedQuizObj.tests.map((value , index) => {
+                     return <li> {value.name} </li>
+                   })
+                 }
+
+                 
+                    {/* <h3><b>Quiz Title :</b> {saveSelectedQuizObj.quizName}   </h3>
+                    <button onClick={backButton}>Back Button </button>
+                    <button  >Start Now </button> */}
+                </div>
+        )
     }
+    
 
 
 
     render() {
-        const {quizInfo , backButton} = this.props;
         return (
             <div className="app">
-                    <h1> Welcome To {quizInfo.name} <button>+</button> </h1>
-                    <h3><b>Quiz Title :</b> {quizInfo.name}   </h3>
-                    <button onClick={backButton}>Back Button </button>
-                    <button  >Start Now </button>
+                {this.quizInfo()}  
+                <h1>sarim</h1>     
                 </div>
         );
     }
