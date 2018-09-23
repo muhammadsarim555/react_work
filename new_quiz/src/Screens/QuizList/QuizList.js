@@ -33,19 +33,18 @@ class QuizList extends Component {
   renderQuestions() {
     const data = this.props.data;
     const {counter} = this.state;
-
-    if (data.qArr.length - 1 === counter) {
-      // score = correct * 20;
-      // document.getElementById("quizcontainer").style.display = "none";
-      // document.getElementById("resultContainer").style.display = "block";
-      // document.getElementById("score").innerHTML = "Your score is" + score + "%";
-      alert("test has been end");
-      
-  }
-  else{
+    console.log(data.qArr.length -1 === counter)
+    console.log(data.qArr)
+    if ( data.qArr.length -0 === counter ){
+    console.log("completed");
+      // alert("athis is your result");
+    }
+    else{
+        // alert("you can not do any thing else");
+    
 
   return(
-        <div>
+        <div id="next">
             <h2> {data.qArr[counter].question} </h2>
             <h4> {data.qArr[counter].option1} </h4>
             <h4> {data.qArr[counter].option2} </h4>
@@ -59,8 +58,11 @@ class QuizList extends Component {
             </div>
     );
   }
-    // console.log(data.qArr[0].question);
+  //   // console.log(data.qArr[0].question);
   }
+
+
+  
 
 
   renderQuizInfo() {
@@ -90,7 +92,7 @@ class QuizList extends Component {
       <div className="App">
         {!boolean && this.renderQuizInfo()}
         {boolean && this.renderQuestions()}
-        {boolean && <button id="next" onClick={this.renderQuestions.bind(this)} > Next </button> }
+        {/* {boolean && <button id="next" onClick={this.renderQuestions.bind(this)} > Next </button> } */}
       </div>
     );
   }
