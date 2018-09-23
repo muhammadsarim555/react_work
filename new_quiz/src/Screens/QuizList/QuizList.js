@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Timer from '../Timer/Timer';
 
 class QuizList extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class QuizList extends Component {
       // opt4: getQuestion[0].option4,
       boolean: false,
       counter: 0,
+      timeFlag: false,
       // data : props.questions,
       // parentQuizName : props.quizParentName,
     };
@@ -41,10 +43,11 @@ class QuizList extends Component {
     }
     else{
         // alert("you can not do any thing else");
-    
 
   return(
-        <div id="next">
+         <div id="next">
+           <Timer timeFlag={this.state.timeFlag} />
+        
             <h2> {data.qArr[counter].question} </h2>
             <h4> {data.qArr[counter].option1} </h4>
             <h4> {data.qArr[counter].option2} </h4>
@@ -71,7 +74,6 @@ class QuizList extends Component {
     // console.log(data);
     return (
       <div>
-        <h2> he is a boy</h2>
         <h1> this is {a} Quiz</h1>
         <h2> {a}: {data.name} </h2>
         <h2> Total Time is:  {data.time} </h2>
@@ -87,11 +89,13 @@ class QuizList extends Component {
   }
 
   render() {
-    const { boolean, counter } = this.state;
+    const { boolean, counter , timeFlag } = this.state;
     return (
       <div className="App">
         {!boolean && this.renderQuizInfo()}
-        {boolean && this.renderQuestions()}
+        {boolean && !timeFlag && this.renderQuestions()}
+        {timeFlag && <Timer timeFlag={this.state.timeFlag} />}
+        
         {/* {boolean && <button id="next" onClick={this.renderQuestions.bind(this)} > Next </button> } */}
       </div>
     );
