@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import QuizList from  '../QuizList/QuizList';
 class Timer extends Component {
     constructor (props) {
         super(props);
@@ -25,11 +25,11 @@ class Timer extends Component {
                 timeFlag : true,
             })
                 }
-                console.log(this.timer)
+                // console.log(this.timer)
             }
             componentWillUpdate(p, s){
-                timeFlag: s,
-                console.log(this.timer , "lifecycle")
+                timeFlag: s;
+                // console.log(this.timer , "lifecycle")
             }
 
       result(){
@@ -41,13 +41,17 @@ class Timer extends Component {
       }
       render () {
           const {min , sec , timeFlag} = this.state;
+          console.log(timeFlag);
         return (
           <div className='timer'>
             <h1>{min} : {sec}</h1>
             <div>
-                {!timeFlag && this.startTimer()}
-                {timeFlag && this.result()}
-
+ {
+                timeFlag  ?
+                (this.result())
+                :
+                 (  <QuizList /> ,this.startTimer())
+}
             </div>
           </div>
         )
