@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Kit from './Screen/Kit/Kit';
 import Teacher from './Screen/Teacher/Teacher';
+import Judge from './Screen/Judge/Judge';
 
 class App extends Component {
   constructor() {
@@ -26,17 +27,17 @@ class App extends Component {
 
   render() {
     const { volume, furtherSteps } = this.state;
-    console.log(furtherSteps);
+    // console.log(furtherSteps);
     return (
       <div >
         <h1> LifeCycle Hooks. </h1>
         <hr />
         <br />
-        <Kit dressColor="yellow" furtherSteps={this.furtherSteps} />
+        <Kit dressColor="yellow" furtherSteps={furtherSteps} />
 
         <hr />
         <Teacher updateSteps={this.updateSteps}  />
-
+        <Judge />
 
 
       </div>

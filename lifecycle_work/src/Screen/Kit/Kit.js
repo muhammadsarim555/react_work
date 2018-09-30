@@ -1,40 +1,92 @@
 import React from 'react';
-
+import '../../App.css'; 
 
 export default class Kid extends React.Component {
 
- constructor(props) {
-   super(props);
-   this.state = { emotion: 'nervous', danceSteps: [], currentStepIndex: 0, startedPerforming: false } ;
- }
+  constructor(props) {
+    super(props);
 
- qualified() {
-   this.setState({startedPerforming: false})
- }
+    this.state = {
 
- static getDerivedStateFromProps(p , s){
-   console.log(p.furtherSteps , "thi is dange statn")
-    //  this.setState({
-         return {danceSteps:s.danceSteps.length < 5 ? s.danceSteps: [...p.danceSteps]}
-    //  })
+      emotion: 'nervous',
+      danceSteps: [],
+      currentStepIndex: 0,
+      startedPerforming: false
 
- }
+    };
+  }
 
- render() {
-   const {dressColor} = this.props;
-   const {danceSteps, emotion, startedPerforming, currentStepIndex} = this.state;
-   return (
-   <div>
-     <div>dressColor: { dressColor }</div>
-      <div style={{backgroundColor: dressColor, width: 50, height: 50}}></div>
-    <div>Emotion: { emotion }</div>
-    {startedPerforming &&
-    <div>
-      <div>Current Step: {danceSteps[currentStepIndex]}</div>
-      <button onClick={() => this.setState({currentStepIndex: currentStepIndex + 1})}>Perform Next Step</button>
-    </div>}
-</div>
-   );
- }
+  static getDerivedStateFromProps(props, state) {
+    const { furtherSteps } = props;
+    const { danceSteps } = state;
+
+    
+    if (danceSteps.length < 5) {
+      danceSteps.push(...furtherSteps)
+    }
+
+
+    // return {
+    //   danceSteps,
+      // startedPerforming: danceSteps.length === 5 ? 
+      
+      // true : false,
+      // emotion: applaud ? applaud : emotion,
+    // }
+
+  }
+
+  componentDidMount() {
+
+    this.setState({
+      danceSteps: ['step1', 'step2'],
+    })
+
+  }
+
+  componentDidUpdate(prevProps) {
+
+    if (prevProps.stars === 3) {
+      this.qualified();
+    }
+  }
+
+  qualified() {
+
+    this.setState({
+      startedPerforming: false,
+      qualified: true,
+      danceSteps: []
+    })
+  }
+
+  componentWillUnmount() {
+
+    const { judge } = this.props;
+    judge(false);
+  }
+
+  render() {
+    const { dressColor } = this.props;
+    const { danceSteps, emotion, startedPerforming, currentStepIndex, qualified } = this.state;
+
+    console.log(danceSteps)
+    return (
+      <div>
+        <div>dressColor: {dressColor} </div>
+        <div style={{ backgroundColor: dressColor, width: 50, height: 50 }}></div>
+        <div>Emotion: {emotion} </div>
+        {
+          startedPerforming ?
+            <div>
+              Current Step: {danceSteps[currentStepIndex]}
+              <button onClick={() => this.setState({ currentStepIndex: currentStepIndex + 1 })}>Perform Next Step</button>
+            </div>
+            :
+            qualified ? <p>You are Qualified</p> : null
+        }
+      </div>
+    );
+  }
 }
 Kid.defaultProps = { dressColor: 'red', applaud: false, furtherSteps: [] };
