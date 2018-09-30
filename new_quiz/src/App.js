@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import QuizList from './Screens/QuizList/QuizList';
+import Timer from './Screens/Timer/Timer';
 import './App.css';
 
 class App extends Component {
@@ -257,7 +258,10 @@ class App extends Component {
       ],
       data: null,
       flag: false,
-      quizParentName: '',
+      quizParentName: '',   
+      timeFlag: false,
+      boolean : false,
+
     }
   }
 
@@ -275,6 +279,7 @@ getIndex(p,c){
 
 }
 
+  
 
   renderQuizName(){
     const {quizzes, data} = this.state;
@@ -304,15 +309,25 @@ getIndex(p,c){
     )
   }
 
+  getBoolean(e){
+    console.log( e , "here is boolean");
+    
+    this.setState({
+      boolean: e,
+    })
+    console.log( this.state.boolean , "here is boolean");
+  }
 
 
   render() {
+    console.log('render')
     const {quizzes, data , flag} = this.state;
     // console.log(quizzes.name);    
     return (
       <div className="App">
           {!flag && this.renderQuizName()}
-           {flag && <QuizList data={this.state.data} getIndex={this.getIndex.bind(this)} quizParentName={this.state.quizParentName} / > }
+           {flag && <QuizList data={this.state.data} getIndex={this.getIndex.bind(this)} quizParentName={this.state.quizParentName}  / > }
+            {/* <Timer getBoolean={this.getBoolean.bind(this)} /> */}
         </div>
     );
   }

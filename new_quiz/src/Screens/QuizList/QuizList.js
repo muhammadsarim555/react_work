@@ -14,11 +14,12 @@ class QuizList extends Component {
       // opt4: getQuestion[0].option4,
       boolean: false,
       counter: 0,
-      timeFlag: false,
       score: 0,
+      timeFlag: false,
       // data : props.questions,
       // parentQuizName : props.quizParentName,
     };
+    // this.renderQuestions = this.renderQuestions.bind(this);
   }
 
   
@@ -36,21 +37,21 @@ class QuizList extends Component {
   renderQuestions() {
     const data = this.props.data;
     const {counter} = this.state;
-    console.log(data.qArr.length -1 === counter)
-    console.log(data.qArr[counter].answer)
-    var val = document.querySelector("input[name='option']:checked");
+    console.log(data.qArr.length -1 === counter);
+    let val = document.querySelector("input[name='option']:checked");
     if (val === null) {
         alert("select anyone");
+        // return false;
     }
-    else {
-        if (data.qArr[counter].answer === val.value) {
-            console.log("right");
-            counter+1;
-        }
-        else {
-          console.log("wrong");
-        }
-      }
+    // else {
+        // if (data.qArr[counter].answer === val.value) {
+            // console.log("right");
+            // counter+1;
+        // }
+        // else {
+          // console.log("wrong");
+        // }
+      // }
         
       
 
@@ -65,23 +66,25 @@ class QuizList extends Component {
   
     else{
         // alert("you can not do any thing else");
+    console.log(data.qArr[counter].answer);
+        
 
   return(
          <div id="next">
            <Timer timeFlag={this.state.timeFlag} />
         
             <h2> {data.qArr[counter].question} </h2>
-            <label><input type="radio" name="option" value="1" /><span ></span></label>
-            {data.qArr[counter].option1}<br/ >
+            <label><input type="radio" name="option" value="1" /><span >{data.qArr[counter].option1}</span></label>
+            <br/ >
 
-            <label><input type="radio" name="option" value="2" /><span ></span></label>
-            {data.qArr[counter].option2}<br/ >
+            <label><input type="radio" name="option" value="2" /><span >{data.qArr[counter].option2}</span></label>
+            <br/ >
 
-            <label><input type="radio" name="option" value="3" /><span ></span></label>
-            {data.qArr[counter].option3}<br/ >
+            <label><input type="radio" name="option" value="3" /><span >{data.qArr[counter].option3}</span></label>
+            <br/ >
 
-            <label><input type="radio" name="option" value="4" /><span ></span></label>
-            {data.qArr[counter].option4}<br/ >
+            <label><input type="radio" name="option" value="4" /><span >{data.qArr[counter].option4}</span></label>
+            <br/ >
             <br/><br/>
             <button 
             onClick={this.updateCounter.bind(this)}
@@ -94,11 +97,20 @@ class QuizList extends Component {
   //   // console.log(data.qArr[0].question);
   }
 
+  // shouldComponentUpdate(p , s){
+  //   console.log(s.boolean);
+  //   s.boolean && this.renderQuestions()
 
+  // //    this.state.boolean !== s.boolean
+  // //   return this.renderQuizInfo()
+  // //   // this.renderQuestions()
+  //   return true;
+  // }
   
 
-  updateBoolean(){
-    this.setState({
+  async updateBoolean(t){
+    // this.props.getBoolean(t)
+    await this.setState({
       boolean: true,
     })
   }
@@ -113,20 +125,26 @@ class QuizList extends Component {
         <h2> {a}: {data.name} </h2>
         <h2> Total Time is:  {data.time} </h2>
         <h2> Total Questions: {data.questions} </h2>
-        <button onClick={this.updateBoolean.bind(this)}>
+        <button  onClick={this.updateBoolean.bind(this, true)}>
     Start Quiz </button>
       </div>
     )
   
   }
 
+  componentDidMount(){
+    const {boolean} = this.state;
+    boolean &&  this.renderQuestions()
+  }
+
+
   render() {
-    const { boolean, counter , timeFlag } = this.state;
+    const { boolean, counter , timeFlag  } = this.state;
+    // console.log(timeFlag);
     return (
       <div className="App">
         {!boolean && this.renderQuizInfo()}
-        {boolean &&  this.renderQuestions()}
-        {/* {timeFlag && <Timer timeFlag={this.state.timeFlag} />} */}
+        {/* {boolean &&  this.renderQuestions()} */}
         
         {/* {boolean && <button id="next" onClick={this.renderQuestions.bind(this)} > Next </button> } */}
       </div>
