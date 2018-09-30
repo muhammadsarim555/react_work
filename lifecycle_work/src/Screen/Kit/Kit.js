@@ -14,17 +14,20 @@ export default class Kid extends React.Component {
       startedPerforming: false
 
     };
+    
   }
 
   static getDerivedStateFromProps(props, state) {
-    const { furtherSteps } = props;
-    const { danceSteps } = state;
-
+    const { furtherSteps , applaud } = props;
+    const { danceSteps , emotion } = state;
+    console.log(applaud)
     
     if (danceSteps.length < 5) {
       danceSteps.push(...furtherSteps)
     }
 
+    // return 
+    //     emotion : applaud
 
     // return {
     //   danceSteps,
@@ -36,6 +39,7 @@ export default class Kid extends React.Component {
 
   }
 
+  
   componentDidMount() {
 
     this.setState({
@@ -66,16 +70,16 @@ export default class Kid extends React.Component {
     judge(false);
   }
 
-  render() {
-    const { dressColor } = this.props;
-    const { danceSteps, emotion, startedPerforming, currentStepIndex, qualified } = this.state;
 
-    console.log(danceSteps)
+  render() {
+    const { dressColor ,applaud } = this.props;
+    const { danceSteps, emotion, startedPerforming, currentStepIndex, qualified } = this.state;
+    // console.log(this.props.applaud);
     return (
       <div>
         <div>dressColor: {dressColor} </div>
         <div style={{ backgroundColor: dressColor, width: 50, height: 50 }}></div>
-        <div>Emotion: {emotion} </div>
+        <div>Emotion: {applaud} </div>
         {
           startedPerforming ?
             <div>

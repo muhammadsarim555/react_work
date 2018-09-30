@@ -1,0 +1,36 @@
+[debug] [2018-09-30T19:46:20.212Z] ----------------------------------------------------------------------
+[debug] [2018-09-30T19:46:20.281Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Admin\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase init
+[debug] [2018-09-30T19:46:20.282Z] CLI Version:   4.0.3
+[debug] [2018-09-30T19:46:20.282Z] Platform:      win32
+[debug] [2018-09-30T19:46:20.282Z] Node Version:  v8.11.4
+[debug] [2018-09-30T19:46:20.297Z] Time:          Mon Oct 01 2018 00:46:20 GMT+0500 (Pakistan Standard Time)
+[debug] [2018-09-30T19:46:20.298Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-30T19:46:20.395Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2018-09-30T19:46:20.404Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Admin\Contacts\Desktop\react assignment\lifecycle_work
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2018-09-30T20:08:40.205Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-09-30T20:08:40.205Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/r-DtPaR7jV5i1gMP0RkVMBYXmj2NGp4v1H4_ryQ0sss',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Oct 01 2018 01:08:40 GMT+0500 (Pakistan Standard Time)

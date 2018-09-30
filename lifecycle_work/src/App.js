@@ -5,6 +5,7 @@ import Kit from './Screen/Kit/Kit';
 import Teacher from './Screen/Teacher/Teacher';
 import Judge from './Screen/Judge/Judge';
 
+
 class App extends Component {
   constructor() {
     super();
@@ -12,9 +13,13 @@ class App extends Component {
     this.state = {
       text: 'sarim',
       volume: 0,
-      furtherState: []
+      furtherState: [],
+      applaud: 'sad',
     }
+
     this.updateSteps = this.updateSteps.bind(this)
+    this.updateApplaude = this.updateApplaude.bind(this)
+
   }
 
   static getDerivedStateFromProps() {
@@ -25,19 +30,32 @@ class App extends Component {
     this.setState({ furtherSteps })
   }
 
+  shouldComponentUpdate(){
+    this.updateApplaude()
+    return true
+  }
+  
+  updateApplaude(e) {
+    // this.setState({
+    //   applaud: 'hAPPY',
+    // })
+    console.log(e)
+  }
+
   render() {
-    const { volume, furtherSteps } = this.state;
-    // console.log(furtherSteps);
+    const { volume, furtherSteps, applaud } = this.state;
+    console.log("I AM RENDER FROM PARENT")
     return (
       <div >
         <h1> LifeCycle Hooks. </h1>
+        <button onClick={this.updateApplaude} > cheking  </button>
         <hr />
         <br />
-        <Kit dressColor="yellow" furtherSteps={furtherSteps} />
+        <Kit dressColor="yellow" furtherSteps={furtherSteps} applaud={applaud} />
 
         <hr />
-        <Teacher updateSteps={this.updateSteps}  />
-        <Judge />
+        <Teacher updateSteps={this.updateSteps} />
+        <Judge applaud={this.updateApplaude} />
 
 
       </div>
