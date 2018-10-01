@@ -4,8 +4,7 @@ export default class Judge extends React.Component {
     constructor(props) {
      super(props)
    
-     this.state = {stars: 0, available: false, applaud: props.applaud
-    
+     this.state = {stars: 0, available: false, 
     }
     }
    
@@ -14,13 +13,11 @@ export default class Judge extends React.Component {
     // }
 
 
-    applaud(e) {
-      //Send this applaud status to Kid.js
-        //  console.log(this.props.applaud(true));
-        this.props.applaud('Happy');
-        // console.log(this.state.applaud)
+    applaud() {
+
+      this.props.giveApplaud();
+      console.log(this.props.giveApplaud());
     }
-   
     provideStars() {
       const {stars} = this.state;
    

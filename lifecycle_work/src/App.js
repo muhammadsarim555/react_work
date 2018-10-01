@@ -11,13 +11,12 @@ class App extends Component {
     super();
 
     this.state = {
-      text: 'sarim',
       volume: 0,
       furtherState: [],
-      applaud: 'nervous',
+      
     }
 
-    this.updateSteps = this.updateSteps.bind(this)
+    this.applaud = this.applaud.bind(this)
     // this.updateApplaude = this.updateApplaude.bind(this)
 
   }
@@ -30,22 +29,20 @@ class App extends Component {
     this.setState({ furtherSteps })
   }
 
-  shouldComponentUpdate(){
-    this.updateApplaude()
-    return true
-  }
+  // shouldComponentUpdate(){
+  //   this.updateApplaude()
+  //   return true
+  // }
   
-  updateApplaude(e) {
-    // this.setState({
-    //   applaud: 'hAPPY',
-    // })
-    console.log(e)
-  }
 
+  applaud() {
+    this.setState({
+      applaud: 'Happy',
+    })
+  }
   render() {
     const { volume, furtherSteps, applaud } = this.state;
     console.log("I AM RENDER FROM PARENT")
-    this.updateApplaude();
     return (
       <div >
         <h1> LifeCycle Hooks. </h1>
@@ -55,7 +52,7 @@ class App extends Component {
 
         <hr />
         <Teacher updateSteps={this.updateSteps} />
-        <Judge applaud={this.updateApplaude} />
+        <Judge giveApplaud={this.applaud} />
 
 
       </div>

@@ -20,7 +20,7 @@ export default class Kid extends React.Component {
   static getDerivedStateFromProps(props, state) {
     const { furtherSteps , applaud } = props;
     const { danceSteps , emotion } = state;
-    console.log(applaud)
+    console.log(applaud);
     
     if (danceSteps.length < 5) {
       danceSteps.push(...furtherSteps)
