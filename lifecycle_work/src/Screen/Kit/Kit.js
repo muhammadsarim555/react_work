@@ -35,7 +35,7 @@ export default class Kid extends React.Component {
       
       true : false,
       emotion: applaud ? applaud : emotion,
-      startedPerforming : props.star === 5 ? this.qualified() : console.log("tesing")
+      // startedPerforming : props.star === 5 ? this.qualified() : console.log("tesing")
     }
 
   }
@@ -51,9 +51,8 @@ export default class Kid extends React.Component {
 
   componentDidUpdate(prevProps) {
 
-    if (prevProps.stars === 5) {
+    if (prevProps.stars === 3) {
       this.qualified();
-      alert("it has been done")
     }
   }
 

@@ -41,6 +41,9 @@ class App extends Component {
     this.setState({
       star,
     })
+    if(star === 5) {
+      return <p> You have been Qualified. </p>
+    }
     console.log(star)
   }
 

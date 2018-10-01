@@ -26,7 +26,7 @@ export default class Judge extends React.Component {
  }
 
      shouldComponentUpdate(nProp , nState){
-       console.log(nState.stars <= 5)
+      //  console.log(nState.stars <= 5)
       return nState.stars <= 5
     }
 
