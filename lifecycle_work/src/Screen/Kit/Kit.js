@@ -18,9 +18,9 @@ export default class Kid extends React.Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    const { furtherSteps , applaud } = props;
+    const { furtherSteps , applaud , star } = props;
     const { danceSteps , emotion } = state;
-    console.log(applaud);
+    console.log(props.star);
     
     if (danceSteps.length < 5) {
       danceSteps.push(...furtherSteps)
@@ -35,6 +35,7 @@ export default class Kid extends React.Component {
       
       true : false,
       emotion: applaud ? applaud : emotion,
+      startedPerforming : props.star === 5 ? this.qualified() : console.log("tesing")
     }
 
   }
@@ -50,8 +51,9 @@ export default class Kid extends React.Component {
 
   componentDidUpdate(prevProps) {
 
-    if (prevProps.stars === 3) {
+    if (prevProps.stars === 5) {
       this.qualified();
+      alert("it has been done")
     }
   }
 
@@ -70,9 +72,9 @@ export default class Kid extends React.Component {
     judge(false);
   }
 
-componentDidMount(p){
-console.log(p.star , "p.star")
-}
+// componentDidMount(p){
+// console.log(p.star , "p.star")
+// }
 
 
   render() {

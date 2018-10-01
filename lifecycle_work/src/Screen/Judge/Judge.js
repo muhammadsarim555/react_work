@@ -14,7 +14,6 @@ export default class Judge extends React.Component {
 
 
     applaud() {
-
       this.props.giveApplaud();
     }
 
