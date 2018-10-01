@@ -14,11 +14,11 @@ class App extends Component {
       text: 'sarim',
       volume: 0,
       furtherState: [],
-      applaud: 'sad',
+      applaud: 'nervous',
     }
 
     this.updateSteps = this.updateSteps.bind(this)
-    this.updateApplaude = this.updateApplaude.bind(this)
+    // this.updateApplaude = this.updateApplaude.bind(this)
 
   }
 
@@ -45,10 +45,10 @@ class App extends Component {
   render() {
     const { volume, furtherSteps, applaud } = this.state;
     console.log("I AM RENDER FROM PARENT")
+    this.updateApplaude();
     return (
       <div >
         <h1> LifeCycle Hooks. </h1>
-        <button onClick={this.updateApplaude} > cheking  </button>
         <hr />
         <br />
         <Kit dressColor="yellow" furtherSteps={furtherSteps} applaud={applaud} />

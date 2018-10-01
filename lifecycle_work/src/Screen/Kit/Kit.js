@@ -29,13 +29,13 @@ export default class Kid extends React.Component {
     // return 
     //     emotion : applaud
 
-    // return {
-    //   danceSteps,
-      // startedPerforming: danceSteps.length === 5 ? 
+    return {
+      danceSteps,
+      startedPerforming: danceSteps.length === 5 ? 
       
-      // true : false,
-      // emotion: applaud ? applaud : emotion,
-    // }
+      true : false,
+      emotion: applaud ? applaud : emotion,
+    }
 
   }
 
@@ -79,7 +79,7 @@ export default class Kid extends React.Component {
       <div>
         <div>dressColor: {dressColor} </div>
         <div style={{ backgroundColor: dressColor, width: 50, height: 50 }}></div>
-        <div>Emotion: {applaud} </div>
+        <div>Emotion: {emotion} </div>
         {
           startedPerforming ?
             <div>
