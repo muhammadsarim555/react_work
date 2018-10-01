@@ -16,7 +16,8 @@ class App extends Component {
       
     }
 
-    this.applaud = this.applaud.bind(this)
+    this.applaud = this.applaud.bind(this);
+    this.starMethod = this.starMethod.bind(this);
     // this.updateApplaude = this.updateApplaude.bind(this)
 
   }
@@ -29,30 +30,33 @@ class App extends Component {
     this.setState({ furtherSteps })
   }
 
-  // shouldComponentUpdate(){
-  //   this.updateApplaude()
-  //   return true
-  // }
   
-
   applaud() {
     this.setState({
       applaud: 'Happy',
     })
   }
+
+  starMethod(star){
+    this.setState({
+      star,
+    })
+    console.log(star)
+  }
+
   render() {
-    const { volume, furtherSteps, applaud } = this.state;
+    const { volume, furtherSteps, applaud , star } = this.state;
     console.log("I AM RENDER FROM PARENT")
     return (
       <div >
         <h1> LifeCycle Hooks. </h1>
         <hr />
         <br />
-        <Kit dressColor="yellow" furtherSteps={furtherSteps} applaud={applaud} />
+        <Kit dressColor="yellow" furtherSteps={furtherSteps} applaud={applaud} star={star} />
 
         <hr />
         <Teacher updateSteps={this.updateSteps} />
-        <Judge giveApplaud={this.applaud} />
+        <Judge giveApplaud={this.applaud} starMethod={this.starMethod} />
 
 
       </div>

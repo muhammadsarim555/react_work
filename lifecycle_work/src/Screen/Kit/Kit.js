@@ -70,6 +70,10 @@ export default class Kid extends React.Component {
     judge(false);
   }
 
+componentDidMount(p){
+console.log(p.star , "p.star")
+}
+
 
   render() {
     const { dressColor ,applaud } = this.props;
