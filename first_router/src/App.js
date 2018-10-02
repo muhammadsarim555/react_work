@@ -4,6 +4,12 @@ import './App.css';
    
 
 class App extends Component {
+   
+    operation(){
+        console.log("chekck")
+        this.props.history.push('/about')
+    }
+   
     render() {
       const text = 'Hello World';
        
@@ -17,7 +23,8 @@ class App extends Component {
           {/* To get started, edit <code>src/App.js</code> and save to reload. */}
           <h1>{text}</h1>
           </p>
-  
+          <button onClick={this.operation.bind(this)}> Operation </button>
+
         </div>
       );
     }
