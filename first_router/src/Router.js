@@ -5,14 +5,16 @@ import Home from './Screens/Home/Home';
 import About from './Screens/About/About'; 
 
 const CustomRouter = () => (
-    <BrowserRouter>
+    <Router>
         <div>
             {/* <Links /> */}
-
+            <Link to="/" >Home </Link>
+            <Link to="/about">About </Link>
+            <hr/>
             <Route exact path="/" component={App} />
             <Route path="/about" component={About} />
         </div>
-    </BrowserRouter>
+    </Router>
 
 )
 
