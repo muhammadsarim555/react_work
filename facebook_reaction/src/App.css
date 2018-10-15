@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -19,7 +20,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #616bfb;
 }
 
 @keyframes App-logo-spin {
@@ -29,4 +30,59 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+img{
+  width: 100%;
+  
+}
+
+.like-button{
+  font-weight: bold;
+  width:10%;
+}
+
+.card-header{
+  margin-bottom: 5% !important;
+  margin: 0px auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  height: 100%;
+  width: 40%;
+    
+
+}
+
+.profile-image{
+  width: 15%;
+  height: 15%;
+  border-radius: 50%;
+  float: left;
+}
+
+.info {
+  float: left;
+  /* display: contents; */
+  margin-left: 1%;
+  font-weight: bold;
+  font-size: 120%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
+
+.render-info{
+  margin: 5%;
+}
+
+.emojis{
+  cursor: pointer;
+}
+
+
+
+.emojis .emoji__face:hover {
+  margin-bottom: 5%;;
+  /* width: 30%;
+  height: 30%; */
+  border-radius: 50%;
 }

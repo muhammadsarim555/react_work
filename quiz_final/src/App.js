@@ -30,7 +30,7 @@ class App extends Component {
                   option4: "none",
                   answer: "1"
                 },
-                
+
                 {
 
                   question: "HTML stands for?",
@@ -105,8 +105,8 @@ class App extends Component {
                   option4: "using img",
                   answer: "1"
                 },
-                
-                
+
+
               ]
             },
           ]
@@ -220,10 +220,8 @@ class App extends Component {
       data: null,
       flag: false,
       quizParentName: '',
-      correctQuestions: 1, //getting from quizlist and give result 
-       // timeFlag: false,
-      // boolean: false,
-
+      correctQuestions: 1, //getting from quizlist and give result and timeras well
+      // timeFlag: false,
     }
   }
 
@@ -236,7 +234,7 @@ class App extends Component {
       data: c,
       flag: true,
       quizParentName: p,
-      })
+    })
     // console.log(this.state.quizParentName, "here is data ???")
 
   }
@@ -274,31 +272,25 @@ class App extends Component {
   //   return p
   // }
 
-  getCorretQuestions(e){
+  getCorretQuestions(e) {
     this.setState({
       correctQuestions: e,
     })
-    console.log(e , "This is accepted props.");
+    // console.log(e , "This is accepted props.");
   }
 
-  // getBoolean(e) {
-  //   console.log(e, "here is boolean");
-
-  //   this.setState({
-  //     boolean: e,
-  //   })
-  //   console.log(this.state.boolean, "here is boolean");
-  // }
+  
 
 
   render() {
-    const { quizzes, data, flag } = this.state;
+    const { quizzes, data, flag, correctQuestions } = this.state;
     // console.log(quizzes.name);    
     return (
       <div className="App">
         {!flag && this.renderQuizName()}
-        {flag && <QuizList data={this.state.data} getIndex={this.getIndex.bind(this)} 
-        quizParentName={this.state.quizParentName} getCorretQuestions={this.getCorretQuestions.bind(this)}  / > }
+        {flag && <QuizList data={this.state.data} getIndex={this.getIndex.bind(this)}
+          quizParentName={this.state.quizParentName} getCorretQuestions={this.getCorretQuestions.bind(this)}
+          correctQuestions={correctQuestions}  />}
       </div>
     );
   }

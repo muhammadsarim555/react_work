@@ -16,6 +16,7 @@ class QuizList extends Component {
       score: 0,
       timeFlag: false,
       correctQuestions: 1,
+      boolenFromTimer: true,
     };
   }
 
@@ -46,63 +47,80 @@ class QuizList extends Component {
       else {
         console.log("wrong");
         this.setState({
-          counter:counter + 1
+          counter: counter + 1
         })
       }
     }
-    console.log("correntQustions ==>", correctQuestions );
-    this.check(correctQuestions)
+    // console.log("correntQustions ==>", correctQuestions * 33 );
+    this.check(correctQuestions * 33)
   }
 
 
-  renderQuestions() {
+   renderQuestions()  {
     const data = this.props.data;
+    // console.log(this.props.correctQuestions)
     const { counter } = this.state;
     // console.log(data.qArr.length -1 === counter);
     let val = document.querySelector("input[name='option']:checked");
 
-    
+
     if (data.qArr.length - 0 === counter) {
-      console.log("completed");
-      return <Result/>
-      
+      // console.log("completed");
+      return <Result timeFlag={this.state.timeFlag} correctQuestions={this.props.correctQuestions} />
+
 
     }
 
     else {
-      // alert("you can not do any thing else");
-      // console.log(data.qArr[counter].answer);
-
 
       return (
-        <div id="next">
-          <Timer timeFlag={this.state.timeFlag} />
-
-          <h2> {data.qArr[counter].question} </h2>
-          <label><input type="radio" name="option" value="1" /><span >{data.qArr[counter].option1}</span></label>
-          <br />
-
-          <label><input type="radio" name="option" value="2" /><span >{data.qArr[counter].option2}</span></label>
-          <br />
-
-          <label><input type="radio" name="option" value="3" /><span >{data.qArr[counter].option3}</span></label>
-          <br />
-
-          <label><input type="radio" name="option" value="4" /><span >{data.qArr[counter].option4}</span></label>
-          <br />
-          <br /><br />
-          <button id="next-button"
-            onClick={this.updateCounter.bind(this)}
-          > Next </button>
-          {/* {
-            dekhteHainBhai.disabled = true
-          } */}
+        <div>
+          {this.questionsMathod()}
+          {/* <Result timeFlag={this.state.timeFlag} correctQuestions={this.props.correctQuestions} /> */}
         </div>
-      );
+      )
+
+
 
     }
     //   // console.log(data.qArr[0].question);
   }
+
+
+  questionsMathod() {
+    const data = this.props.data;
+    // console.log(this.props.correctQuestions)
+    const { counter } = this.state;
+    // console.log(data.qArr.length -1 === counter);
+    let val = document.querySelector("input[name='option']:checked");
+
+
+    return (
+      <div id="next">
+
+        {/* <Timer correctQuestions={this.props.correctQuestions} getBooleanFromTimer={this.getBooleanFromTimer.bind(this)} /> */}
+
+
+        <h2> {data.qArr[counter].question} </h2>
+        <label><input type="radio" name="option" value="1" /><span >{data.qArr[counter].option1}</span></label>
+        <br />
+
+        <label><input type="radio" name="option" value="2" /><span >{data.qArr[counter].option2}</span></label>
+        <br />
+
+        <label><input type="radio" name="option" value="3" /><span >{data.qArr[counter].option3}</span></label>
+        <br />
+
+        <label><input type="radio" name="option" value="4" /><span >{data.qArr[counter].option4}</span></label>
+        <br />
+        <br /><br />
+        <button id="next-button"
+          onClick={this.updateCounter.bind(this)}
+        > Next </button>
+      </div>
+    );
+  }
+
 
   // shouldComponentUpdate(p , s){
   //   console.log(s.boolean);
@@ -137,6 +155,17 @@ class QuizList extends Component {
 
   }
 
+
+  getBooleanFromTimer(e) {
+    console.log(e, "here is accept props");
+    boolenFromTimer: e
+
+    // this.setState({
+    //   boolean: e,
+    // })
+    // console.log(this.state.boolean, "here is boolean");
+  }
+
   // componentDidMount() {
   //   const { boolean } = this.state;
   //   boolean && this.renderQuestions()
@@ -144,7 +173,7 @@ class QuizList extends Component {
 
 
   render() {
-    const { boolean, counter, timeFlag } = this.state;
+    const { boolean, counter, timeFlag, boolenFromTimer } = this.state;
     // console.log("I am Render ");
 
     // console.log(timeFlag);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import QuizList from '../QuizList/QuizList';
+import Result from '../Result/Result';
 
 class Timer extends Component {
     constructor(props) {
@@ -7,10 +8,10 @@ class Timer extends Component {
         this.state = {
             sec: 5,
             min: 0,
-            timeFlag: props.timeFlag,
-            check: false,
+            check: true,
         }
     }
+
 
 
     componentWillUnmount() {
@@ -31,9 +32,9 @@ class Timer extends Component {
             // alert("your time has been finished");
             clearInterval(this.timer)
             this.setState({
-                check: true,
+                check: false,
             })
-            this.getBoolean.bind(this , true)
+            // this.getBoolean.bind(this, true);
         }
         // console.log(this.timer)
         return (
@@ -43,33 +44,17 @@ class Timer extends Component {
 
         )
     }
-    
-
-    componentWillUpdate(p, s) {
-        timeFlag: s;
-        // console.log(this.timer , "lifecycle")
-    }
 
 
-    result() {
-        return (
-            <div>
-                <h2> Your result is --- </h2>
-            </div>
-        )
-    }
-
-    getBoolean(e){
-        this.props.getBoolean()
-        console.log(e)
-    }
 
     render() {
         const { min, sec, timeFlag, check } = this.state;
         // console.log(timeFlag);
         return (
             <div className='timer'>
-                
+                {/* <Result/> */}
+                {check ? this.startTimer() : <Result correctQuestions={this.props.correctQuestions} />}
+                {/* {this.startTimer()} */}
             </div>
         )
     }
